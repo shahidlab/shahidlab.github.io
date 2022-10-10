@@ -17,6 +17,7 @@ Assistant Professor \\
 Department of Plant Biology, Ecology, and Evolution\\
 421 Physical Sciences Building\\
 Oklahoma State University \\
+[Saima's CV]({{ site.url }}{{ site.baseurl }}/assets/CV_Saima_Shahid_Oct2022.pdf)
 <a href="http://scholar.google.com/citations?user=lez4bcIAAAAJ&hl=en" itemprop="sameAs" rel="nofollow noopener noreferrer">
   <i class="fab fa-google" aria-hidden="true" style="color:#4c8bf5"> </i></a>
 <a href="https://orcid.org/0000-0001-9385-0925" itemprop="sameAs" rel="nofollow noopener noreferrer">
