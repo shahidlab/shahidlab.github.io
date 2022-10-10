@@ -21,4 +21,4 @@ feature_row:
 <p align="center" style="font-size:30px;"> <a href="https://plantbio.okstate.edu/"> Department of Plant Biology, Ecology and Evolution, Oklahoma State University </a>
 </p>
 
-We study interspecies RNA communication and epigenetic regulation in parasitic plants and beyond. See our [research](/research/) and [publications](/publications/) to learn more about what we do, and meet our current [lab members](/team/)! Feel free to reach out to [Saima](@mailto:saima.shahid@okstate.edu) if you are interested in [joining the lab](/join/) or collaborating on research projects.
+We study interspecies RNA communication and epigenetic regulation in parasitic plants and beyond. See our [research](/research/) and [publications](/publications/) to learn more about what we do, and meet our current [lab members](/team/)! Feel free to reach out if you are interested in [joining the lab](/join/) or collaborating on research projects.
