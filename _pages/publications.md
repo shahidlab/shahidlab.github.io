@@ -10,7 +10,7 @@ author_profile: true
 
 For a full list of publications see [google scholar](https://scholar.google.com/citations?user=lez4bcIAAAAJ&hl=en).
 
-[![](/assets/pubs/2022_TE.jpg)](https://www.annualreviews.org/toc/genet/forthcoming) Liu P, Cuerda-Gil D, __Shahid S__,Slotkin RK (2022) The epigenetic control of the transposable element lifecycle in plant genomes and beyond. *Annual Review of Genetics*. In Press.
+[![](/assets/pubs/2022_TE.jpg)](https://www.annualreviews.org/toc/genet/forthcoming) Liu P, Cuerda-Gil D, __Shahid S__, Slotkin RK (2022) The epigenetic control of the transposable element lifecycle in plant genomes and beyond. *Annual Review of Genetics*. In Press.
 
 [![](/assets/pubs/2020_long_reads.jpg)](https://doi.org/10.1016/j.pbi.2019.12.012) 15\. __Shahid S__, Slotkin RK (2020) [The current revolution in transposable element biology enabled by long reads](https://doi.org/10.1016/j.pbi.2019.12.012) *Current Opinion in Plant Biology* 54, 49-56.
 
