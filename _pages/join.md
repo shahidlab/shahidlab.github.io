@@ -8,7 +8,7 @@ header:
 permalink : /join/
 author_profile: false
 ---
-![image-left]({{ site.url }}{{ site.baseurl }}/assets/images/osu_mascot.jpeg){: .align-left}{:width="300"}
+![image-left]({{ site.url }}{{ site.baseurl }}/assets/images/OSU_mascot.jpeg){: .align-left}{:width="300"}
 We are looking for undergraduates, graduate students (M.S./Ph.D.), and postdocs to join the lab! If you are interested in our work, please [email Dr. Saima Shahid](mailto:saima.shahid@okstate.edu) the following:\\
   \- a brief research statement/cover letter describing your interests and why you think you will be a good fit for the lab, \\
   \- your CV with contact information for three references
