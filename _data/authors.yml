@@ -1,0 +1,34 @@
+# Authors
+
+# MEMBERS
+
+Saima Shahid:
+  name: Saima Shahid
+  email: saima.shahid@okstate.edu
+  bio: "Assistant Professor"
+  bio_long: ""
+  avatar: /assets/images/Saima Shahid.jpg
+  title: Assistant Professor
+  github:
+  linkedin: saima-shahid
+  google:
+    scholar: lez4bcIAAAAJ
+  orc_id: 0000-0001-9385-0925
+  twitter: psaima
+  links:
+    - label: "Website"
+      icon: "fas fa-fw fa-link"
+      url: "https://saimashahid.github.io"
+YOU:
+  name: 
+  email:
+  bio: ""
+  bio_long: ""
+  avatar: /assets/images/osu.jpg
+  title:
+  github:
+  linkedin:
+  google:
+    scholar:
+  orc_id:
+  twitter:

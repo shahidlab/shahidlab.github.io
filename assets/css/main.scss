@@ -1,0 +1,43 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+$link-color:  #FF7300 !default;
+@charset "utf-8";
+
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
+@import "minimal-mistakes"; // main partials
+
+// link format
+
+.page__content a {
+  text-decoration: none;
+}
+
+.page__content a:hover {
+  text-decoration: underline;
+}
+
+// Publication.  Need custom formatting to get the thumb on the left. Adapted from https://xgitlab.cels.anl.gov/argo/website/blob/master/assets/css/main.scss
+.pub {
+    p {
+        clear: left;
+    }
+
+    img {
+        border-radius: $border-radius;
+        height: 100px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.35);
+        float: left;
+        margin-right: 10px;
+        margin-bottom: 20px;
+    }
+
+    a > img:hover {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5) !important;
+    }
+
+    .landscape {
+	width: 100px;
+	height: auto;
+    }
+}
