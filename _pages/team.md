@@ -12,7 +12,7 @@ show_excerpts: true
 author_profile: false
 ---
 ## Principal Investigator
-#### [**Saima Shahid**](https://plantbio.okstate.edu/faculty/faculty) [![image-left]({{ site.url }}{{ site.baseurl }}/assets/images/Saima Shahid.jpg)](https://plantbio.okstate.edu/faculty/faculty){: .align-left}
+#### [**Saima Shahid**](https://plantbio.okstate.edu/faculty/faculty) [![Saima Shahid]({{ site.url }}{{ site.baseurl }}/assets/images/Saima Shahid.jpg)](https://plantbio.okstate.edu/faculty/faculty){: .align-left}
 Assistant Professor \\
 Department of Plant Biology, Ecology, and Evolution\\
 421 Physical Sciences Building\\
