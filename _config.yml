@@ -20,7 +20,7 @@ title                    : "The Shahid Lab @okstate"
 title_separator          : "|"
 subtitle                 : "Interspecies RNAi · Parasitic plants · Epigenetics · Transposons " # site tagline that appears below site title in masthead
 name                     : "Saima Shahid"
-description              : "Shahid Lab at the Oklahoma State University"
+description              : "Laboratory of Saima Shahid at the Oklahoma State University"
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -71,7 +71,7 @@ google:
   search_engine_id       : # YOUR_SEARCH_ENGINE_ID
   instant_search         : # false (default), true
 # SEO Related
-google_site_verification :
+google_site_verification : "Wq6s9y5oypG3oRnUbzGIgMzD3tenTOa1tLH7BmFB3ZY"
 bing_site_verification   :
 yandex_site_verification :
 naver_site_verification  :
@@ -101,10 +101,10 @@ analytics:
 
 # Site Author
 #author:
-#  name             : "Your Name"
-#  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-#  bio              : "I am an **amazing** person."
-#  location         : "Somewhere"
+  name             : "Saima Shahid"
+  avatar           : "/assets/images/"
+#  bio              : ""
+#  location         : ""
 #  email            :
 #  links:
 #    - label: "Email"
