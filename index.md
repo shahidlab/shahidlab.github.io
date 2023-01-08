@@ -17,8 +17,8 @@ feature_row:
     title: "Publications"
     excerpt: "See our [Publications](/publications/) for links to research articles."
 ---
-<p align="center" style="font-size:50px; margin : 0; padding-top:0;" > The Shahid Lab </p>
-<p align="center" style="font-size:30px;"> <a href="https://plantbio.okstate.edu/"> Department of Plant Biology, Ecology and Evolution, Oklahoma State University </a>
-</p>
+# THE SHAHID LAB
+{: style="text-align: center;
+  letter-spacing: 0.25em;"}
 
 We study interspecies RNA communication and epigenetic regulation in parasitic plants and beyond. See our [research](/research/) and [publications](/publications/) to learn more about what we do, and meet our current [lab members](/team/)! Feel free to reach out if you are interested in [joining the lab](/join/) or collaborating on research projects.
