@@ -1,5 +1,6 @@
 ---
 layout: splash
+hidden: true
 permalink: /
 header:
   image: /assets/images/ath3.jpg
