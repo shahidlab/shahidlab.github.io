@@ -11,13 +11,13 @@ classes: wide
 show_excerpts: true
 author_profile: false
 ---
-## Principal Investigator
-#### [**Saima Shahid**](https://plantbio.okstate.edu/faculty/faculty) [![Saima Shahid]({{ site.url }}{{ site.baseurl }}/assets/images/Saima Shahid.jpg)](https://plantbio.okstate.edu/faculty/faculty){: .align-left}
-Assistant Professor \\
-Department of Plant Biology, Ecology, and Evolution\\
-Oklahoma State University \\
-Office: 421 Physical Sciences Building\\
-Lab: 308 Physical Sciences Building\\
+<h2  style="margin-top: 0">Principal Investigator</h2>
+[![Saima Shahid]({{ site.url }}{{ site.baseurl }}/assets/images/Saima Shahid.jpg)](https://plantbio.okstate.edu/faculty/faculty){: .align-left} [**Saima Shahid**](https://plantbio.okstate.edu/faculty/faculty)  
+Assistant Professor  
+Department of Plant Biology, Ecology, and Evolution  
+Oklahoma State University  
+Office: 421 Physical Sciences Building  
+Lab: 308 Physical Sciences Building  
 [Saima's CV]({{ site.url }}{{ site.baseurl }}/assets/CV_Saima_Shahid_Oct2022.pdf)  <a href="http://scholar.google.com/citations?user=lez4bcIAAAAJ&hl=en" itemprop="sameAs" rel="nofollow noopener noreferrer">
   <i class="fab fa-google" aria-hidden="true" style="color:#4c8bf5"> </i></a>
 <a href="https://orcid.org/0000-0001-9385-0925" itemprop="sameAs" rel="nofollow noopener noreferrer">
@@ -28,8 +28,6 @@ Lab: 308 Physical Sciences Building\\
   <i class="fab fa-fw fa-twitter" style="color:#00acee"></i></a>
 
 <br>
-<br>
-
 ## Current Members
 <section class="page__content cf">
 
