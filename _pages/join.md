@@ -18,7 +18,7 @@ We are affiliated with the [Plant Biology M.S. program, and the interdisciplinar
 
 ## About the Lab
 
-Our group is located at 321 Physical Sciences, [Department of Plant Biology, Ecology and Evolution](https://plantbio.okstate.edu/) at the Oklahoma State University in Stillwater, Oklahoma.
+Our group is located at 308 Physical Sciences, [Department of Plant Biology, Ecology and Evolution](https://plantbio.okstate.edu/) at the Oklahoma State University in Stillwater, Oklahoma.
 
 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12890.961387168116!2d-97.0702395!3d36.1241831!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xd04b92682585a641!2sDepartment%20of%20Physics%20(Physical%20Sciences%20Building)!5e0!3m2!1sen!2sus!4v1665385703383!5m2!1sen!2sus" height="100%" width="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
