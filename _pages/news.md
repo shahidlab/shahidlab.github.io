@@ -5,6 +5,6 @@ title: News
 header:
   #overlay_color: "#111"
   overlay_image: /assets/images/ath3.jpg
-permalink : /about/
+permalink : /news/
 author_profile: false
 ---

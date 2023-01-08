@@ -40,4 +40,8 @@ $link-color:  #FF7300 !default;
 	width: 100px;
 	height: auto;
     }
+// Hide permalink buttons beside header text
+}
+.header-link {
+  display: none;
 }

@@ -11,7 +11,7 @@ main:
   - title: "Join us"
     url: /join/
   - title: "News"
-    url: /about/
+    url: /news/
   # - title: "About"
   #   url: https://mmistakes.github.io/minimal-mistakes/about/
   # - title: "Sample Posts"
