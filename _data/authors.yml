@@ -19,12 +19,51 @@ Saima Shahid:
     - label: "Website"
       icon: "fas fa-fw fa-link"
       url: "https://saimashahid.github.io"
+Beth Brandt:
+  name: Beth Brandt
+  email: beth.brandt@okstate.edu
+  bio: ""
+  bio_long: ""
+  avatar: /assets/images/Beth_Brandt.jpg
+  title:
+  github:
+  linkedin:
+  google:
+    scholar:
+  orc_id:
+  twitter:
+Zoe Hester:
+  name: Zoe Hester
+  email: zhester@okstate.edu
+  bio: ""
+  bio_long: ""
+  avatar: /assets/images/Zoe_Hester.jpg
+  title:
+  github:
+  linkedin:
+  google:
+    scholar:
+  orc_id:
+  twitter:
+Reese Jackson:
+  name: Reese Jackson
+  email: reese.jackson@okstate.edu
+  bio: ""
+  bio_long: ""
+  avatar: /assets/images/Reese_Jackson.jpg
+  title:
+  github:
+  linkedin:
+  google:
+    scholar:
+  orc_id:
+  twitter:
 YOU:
-  name: 
+  name:
   email:
   bio: ""
   bio_long: ""
-  avatar: /assets/images/osu.jpg
+  avatar: /assets/images/ath_flower.jpg
   title:
   github:
   linkedin:
