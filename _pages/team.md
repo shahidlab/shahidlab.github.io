@@ -12,10 +12,10 @@ show_excerpts: true
 author_profile: false
 ---
 <h2  style="margin-top: 0">Principal Investigator</h2>
-[![Saima Shahid]({{ site.url }}{{ site.baseurl }}/assets/images/Saima Shahid.jpg)](https://plantbio.okstate.edu/faculty/faculty){: .align-left} [**Saima Shahid**](https://plantbio.okstate.edu/faculty/faculty)  
+[![Saima Shahid]({{ site.url }}{{ site.baseurl }}/assets/images/Saima Shahid.jpg)](https://plantbio.okstate.edu/faculty/faculty){: .align-left} [**Saima Shahid**](https://experts.okstate.edu/saima.shahid)  
 Assistant Professor  
-Department of Plant Biology, Ecology, and Evolution  
-Oklahoma State University  
+[Department of Plant Biology, Ecology, and Evolution](https://plantbio.okstate.edu/faculty/faculty)  
+[Oklahoma State University](https://go.okstate.edu)  
 Office: 421 Physical Sciences Building  
 Lab: 308 Physical Sciences Building  
 [Saima's CV]({{ site.url }}{{ site.baseurl }}/assets/CV_Saima_Shahid_Oct2022.pdf)  <a href="http://scholar.google.com/citations?user=lez4bcIAAAAJ&hl=en" itemprop="sameAs" rel="nofollow noopener noreferrer">
