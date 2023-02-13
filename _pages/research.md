@@ -12,8 +12,8 @@ gallery1:
     image_path: /assets/images/dodder seedling.jpg
     alt: "Cuscuta parasitizing Arabidopsis"
     title: ""
-  - url: /assets/images/dodder_flowering.jpg
-    image_path: /assets/images/dodder_flowering.jpg
+  - url: /assets/images/dodder_flowering.JPG
+    image_path: /assets/images/dodder_flowering.JPG
     alt: "Cuscuta parasitizing Arabidopsis"
     title: ""
 ---
