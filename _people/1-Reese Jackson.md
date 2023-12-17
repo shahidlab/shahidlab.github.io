@@ -2,7 +2,7 @@
 layout: archive
 title: "Reese Jackson"
 author: Reese Jackson
-jobtitle:
+jobtitle: Undergraduate researcher
 bio:
 excerpt: ""
 author_profile: true

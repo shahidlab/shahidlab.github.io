@@ -1,4 +1,16 @@
 var store = [{
+        "title": "Megan Adler",
+        "excerpt":"I’m a first year PBIO Masters student interested in the inner mechanisms of plants. I have experience in pharmaceutical microbiology and worked in a previous molecular plant lab.  ","categories": [],
+        "tags": [],
+        "url": "/people/0-Megan%20Adler/",
+        "teaser": "/assets/images/MA.jpg"
+      },{
+        "title": "Amna Dar",
+        "excerpt":"Amna is a Plant Biology major at OSU and has a long-standing interest in plant breeding.  ","categories": [],
+        "tags": [],
+        "url": "/people/1-Amna%20Dar/",
+        "teaser": "/assets/images/ath_flower.jpg"
+      },{
         "title": "Beth Brandt",
         "excerpt":"Beth is a sophomore at OSU and studying Biology on a pre-dental track.  ","categories": [],
         "tags": [],

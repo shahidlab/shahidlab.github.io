@@ -2,7 +2,7 @@
 layout: archive
 title: "Beth Brandt"
 author: Beth Brandt
-jobtitle:
+jobtitle: Undergraduate researcher
 bio:
 excerpt: ""
 author_profile: true

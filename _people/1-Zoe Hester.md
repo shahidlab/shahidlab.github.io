@@ -2,7 +2,7 @@
 layout: archive
 title: "Zoe Hester"
 author: Zoe Hester
-jobtitle:
+jobtitle: Undergraduate researcher
 bio:
 excerpt: ""
 author_profile: true

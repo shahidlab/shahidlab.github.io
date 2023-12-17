@@ -10,6 +10,12 @@ entries_layout: grid
 classes: wide
 show_excerpts: true
 author_profile: false
+gallery:
+  - image_path: /assets/images/Reese_Jackson.jpg
+    alt: ""
+    image_caption: "Reese Jackson (Fall 2022)"
+    title: "Reese Jackson (Fall 2022)"
+    excerpt: ""
 ---
 <h2  style="margin-top: 0">Principal Investigator</h2>
 [![Saima Shahid]({{ site.url }}{{ site.baseurl }}/assets/images/Saima Shahid.jpg)](https://plantbio.okstate.edu/faculty/faculty){: .align-left} [**Saima Shahid**](https://experts.okstate.edu/saima.shahid)  
@@ -27,11 +33,8 @@ Lab: 308 Physical Sciences Building
 <a title="Twitter" href="https://twitter.com/psaima">
   <i class="fab fa-fw fa-twitter" style="color:#00acee"></i></a>
 
-<br>
-## Current Members
-<section class="page__content cf">
+<br/>
 
-<div class="entries-{{ page.entries_layout }}">
-  {% include people-list.html entries=site.people sort_by=page.sort_by sort_order=page.sort_order type=page.entries_layout %}
-</div>
-</section>
+## Current Members
+{% include people-list.html entries=site.people sort_by=page.sort_by sort_order=page.sort_order type=page.entries_layout %}
+<br/>
