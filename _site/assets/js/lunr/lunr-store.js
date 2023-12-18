@@ -48,7 +48,7 @@ var store = [{
         "teaser": "/assets/images/Beth_Brandt.jpg"
       },{
         "title": "Jackson Grimes",
-        "excerpt":"We are looking for students, research technician, and postdocs to join the lab! If you are interested in our work, please see this link for information about joining the lab.  ","categories": [],
+        "excerpt":"Jackson is an undergraduate on a pre-vet track at OSU.  ","categories": [],
         "tags": [],
         "url": "/people/1-Jackson%20Grimes/",
         "teaser": "/assets/images/ath_flower.jpg"
@@ -60,7 +60,7 @@ var store = [{
         "teaser": "/assets/images/Zoe_Hester.jpg"
       },{
         "title": "YOU!",
-        "excerpt":"Jackson is an undergraduate on a pre-vet track at OSU.  ","categories": [],
+        "excerpt":"We are looking for students, research technician, and postdocs to join the lab! If you are interested in our work, please see this link for information about joining the lab.  ","categories": [],
         "tags": [],
         "url": "/people/2-you/",
         "teaser": "/assets/images/ath_flower.jpg"
