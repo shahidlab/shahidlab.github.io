@@ -1,5 +1,6 @@
 ---
-layout: splash
+layout: single
+classes: wide
 title: Team
 header:
   #overlay_color: "#111"
@@ -7,23 +8,19 @@ header:
 permalink : /team/
 collection: people
 entries_layout: grid
-classes: wide
+#classes: wide
 show_excerpts: true
 author_profile: false
-gallery:
-  - image_path: /assets/images/Reese_Jackson.jpg
-    alt: ""
-    image_caption: "Reese Jackson (Fall 2022)"
-    title: "Reese Jackson (Fall 2022)"
-    excerpt: ""
 ---
 <h2  style="margin-top: 0">Principal Investigator</h2>
-[![Saima Shahid]({{ site.url }}{{ site.baseurl }}/assets/images/Saima Shahid.jpg)](https://plantbio.okstate.edu/faculty/faculty){: .align-left} [**Saima Shahid**](https://experts.okstate.edu/saima.shahid)  
+
+[![image-left]({{ site.url }}{{ site.baseurl }}/assets/images/Saima Shahid.jpg)](https://plantbio.okstate.edu/faculty/faculty){: .align-left}  
+### [**Saima Shahid**](https://experts.okstate.edu/saima.shahid)
+
 Assistant Professor  
-[Department of Plant Biology, Ecology, and Evolution](https://plantbio.okstate.edu/faculty/faculty)  
-[Oklahoma State University](https://go.okstate.edu)  
-Office: 421 Physical Sciences Building  
-Lab: 308 Physical Sciences Building  
+Department of Plant Biology, Ecology, and Evolution,  
+[Oklahoma State University](https://plantbio.okstate.edu/)  
+
 [Saima's CV]({{ site.url }}{{ site.baseurl }}/assets/CV_Saima_Shahid_Oct2022.pdf)  <a href="http://scholar.google.com/citations?user=lez4bcIAAAAJ&hl=en" itemprop="sameAs" rel="nofollow noopener noreferrer">
   <i class="fab fa-google" aria-hidden="true" style="color:#4c8bf5"> </i></a>
 <a href="https://orcid.org/0000-0001-9385-0925" itemprop="sameAs" rel="nofollow noopener noreferrer">
@@ -31,10 +28,22 @@ Lab: 308 Physical Sciences Building
 <a title='Email' href="mailto:saima.shahid@okstate.edu">
   <i class="fas fa-envelope fa-fw" style="color:#000000"></i></a>
 <a title="Twitter" href="https://twitter.com/psaima">
-  <i class="fab fa-fw fa-twitter" style="color:#00acee"></i></a>
-
-<br/>
-
+  <i class="fab fa-fw fa-twitter" style="color:#00acee"></i></a>  
+  Office: 421 Physical Sciences Building  
+  Lab: 308 Physical Sciences Building  
+<br>
 ## Current Members
-{% include people-list.html entries=site.people sort_by=page.sort_by sort_order=page.sort_order type=page.entries_layout %}
-<br/>
+<section class="page__content cf">
+
+<div class="entries-{{ page.entries_layout }}">
+  {% include people-list.html entries=site.people sort_by=page.sort_by sort_order=page.sort_order type=page.entries_layout %}
+</div>
+</section>
+
+## Alumni
+<section class="page__content cf">
+
+<div class="entries-{{ page.entries_layout }}">
+  {% include people-list.html entries=site.alum sort_by=page.sort_by sort_order=page.sort_order type=page.entries_layout %}
+</div>
+</section>

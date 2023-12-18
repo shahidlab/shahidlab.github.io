@@ -1,4 +1,10 @@
 var store = [{
+        "title": "Reese Jackson",
+        "excerpt":"Reese was an undergrad researcher at the Shahid Lab in Spring 2023. Her research interests include animal communication, social behavior and social learning in animals.  ","categories": [],
+        "tags": [],
+        "url": "/alum/1-Reese%20Jackson/",
+        "teaser": "/assets/images/Reese_Jackson.jpg"
+      },{
         "title": "Megan Adler",
         "excerpt":"I’m a first year PBIO Masters student interested in the inner mechanisms of plants. I have experience in pharmaceutical microbiology and worked in a previous molecular plant lab.  ","categories": [],
         "tags": [],
@@ -9,7 +15,7 @@ var store = [{
         "excerpt":"Amna is a Plant Biology major at OSU and has a long-standing interest in plant breeding.  ","categories": [],
         "tags": [],
         "url": "/people/1-Amna%20Dar/",
-        "teaser": "/assets/images/ath_flower.jpg"
+        "teaser": "/assets/images/AD.jpg"
       },{
         "title": "Beth Brandt",
         "excerpt":"Beth is a sophomore at OSU and studying Biology on a pre-dental track.  ","categories": [],
@@ -17,11 +23,11 @@ var store = [{
         "url": "/people/1-Beth%20Brandt/",
         "teaser": "/assets/images/Beth_Brandt.jpg"
       },{
-        "title": "Reese Jackson",
-        "excerpt":"Reese is a senior at OSU with majors in Zoology and Biology. Her research interests include animal communication, social behavior and social learning in animals.  ","categories": [],
+        "title": "Jackson Grimes",
+        "excerpt":"We are looking for students, research technician, and postdocs to join the lab! If you are interested in our work, please see this link for information about joining the lab.  ","categories": [],
         "tags": [],
-        "url": "/people/1-Reese%20Jackson/",
-        "teaser": "/assets/images/Reese_Jackson.jpg"
+        "url": "/people/1-Jackson%20Grimes/",
+        "teaser": "/assets/images/ath_flower.jpg"
       },{
         "title": "Zoe Hester",
         "excerpt":"Zoe is a Plant Biology major at OSU and loves all things related to plants!  ","categories": [],
@@ -30,8 +36,8 @@ var store = [{
         "teaser": "/assets/images/Zoe_Hester.jpg"
       },{
         "title": "YOU!",
-        "excerpt":"We are looking for students, research technician, and postdocs to join the lab! If you are interested in our work, please see this link for information about joining the lab.  ","categories": [],
+        "excerpt":"Jackson is an undergraduate on a pre-vet track at OSU.  ","categories": [],
         "tags": [],
-        "url": "/people/1-you/",
+        "url": "/people/2-you/",
         "teaser": "/assets/images/ath_flower.jpg"
       },]

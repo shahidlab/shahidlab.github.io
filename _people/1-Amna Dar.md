@@ -7,7 +7,7 @@ bio:
 excerpt: ""
 author_profile: true
 header:
-  teaser: /assets/images/ath_flower.jpg
+  teaser: /assets/images/AD.jpg
 
 ---
 Amna is a Plant Biology major at OSU and has a long-standing interest in plant breeding.
