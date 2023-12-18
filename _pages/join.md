@@ -7,6 +7,25 @@ header:
   overlay_image: /assets/images/ath3.jpg
 permalink : /join/
 author_profile: false
+gallery:
+  - url: /assets/images/osu-campus-1.jpg
+    image_path: /assets/images/osu-campus-1.jpg
+    alt: "OSU campus"
+  - url: /assets/images/osu-campus-2.jpg
+    image_path: /assets/images/osu-campus-2.jpg
+    alt: "OSU campus"  
+  - url: /assets/images/osu-campus-5.jpg
+    image_path: /assets/images/osu-campus-5.jpg
+    alt: "OSU campus"  
+  - url: /assets/images/osu-campus-6.jpg
+    image_path: /assets/images/osu-campus-6.jpg
+    alt: "OSU campus"
+  - url: /assets/images/osu-campus-7.jpg
+    image_path: /assets/images/osu-campus-7.jpg
+    alt: "OSU campus"
+  - url: /assets/images/osu-campus-7.jpg
+    image_path: /assets/images/OSU-flags.jpg
+    alt: "OSU campus"       
 ---
 ![image-left]({{ site.url }}{{ site.baseurl }}/assets/images/OSU_mascot.jpeg){: .align-left}{:width="300"}
 We are looking for undergraduates, graduate students (M.S./Ph.D.), and postdocs to join the lab! If you are interested in our work, please [email Dr. Saima Shahid](mailto:saima.shahid@okstate.edu) the following:\\
@@ -24,3 +43,5 @@ Our group is located at 308 Physical Sciences, [Department of Plant Biology, Eco
 
 ## Life in Stillwater
 Stillwater is a historic city with small-town charm and affordable living costs. It is located between Oklahoma's two largest cities - Oklahoma City and Tulsa. Known as the home of red dirt music, Stillwater has a vibrant art and culture scene with galleries, museums, live music, performing art events, concerts, and dozens of festivals that happen all-year round. Stillwater gets lots of sunshine and there are plenty of parks and recreational opportunities (Boomer lake park, Lake McMurty, Lake blackwell).
+
+{% include gallery %}
