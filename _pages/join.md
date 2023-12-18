@@ -23,8 +23,8 @@ gallery:
   - url: /assets/images/osu-campus-7.jpg
     image_path: /assets/images/osu-campus-7.jpg
     alt: "OSU campus"
-  - url: /assets/images/osu-campus-7.jpg
-    image_path: /assets/images/OSU-flags.jpg
+  - url: /assets/images/OSU-flags.JPG
+    image_path: /assets/images/OSU-flags.JPG
     alt: "OSU campus"       
 ---
 ![image-left]({{ site.url }}{{ site.baseurl }}/assets/images/OSU_mascot.jpeg){: .align-left}{:width="300"}
