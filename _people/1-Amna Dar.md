@@ -1,7 +1,7 @@
 ---
 layout: archive
 title: "Amna Dar"
-author: Amnna Dar
+author: Amna Dar
 jobtitle: Undergraduate researcher
 bio:
 excerpt: ""
