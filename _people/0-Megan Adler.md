@@ -1,7 +1,7 @@
 ---
 layout: archive
 title: "Megan Adler"
-author: YOU
+author: Megan Adler
 jobtitle: Graduate Student
 bio:
 excerpt: ""
