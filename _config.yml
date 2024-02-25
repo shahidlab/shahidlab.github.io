@@ -16,11 +16,11 @@ minimal_mistakes_skin    : "air" # "default", "air", "aqua", "contrast", "dark",
 
 # Site Settings
 locale                   : "en-US"
-title                    : "The Shahid Lab @okstate"
+title                    : "The Shahid Lab"
 title_separator          : "|"
 subtitle                 : "Interspecies RNAi · Parasitic plants · Epigenetics · Transposons " # site tagline that appears below site title in masthead
 name                     : "Saima Shahid"
-description              : "Laboratory of Saima Shahid at the Oklahoma State University"
+description              : "Laboratory of Saima Shahid at the University of Sheffield"
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
