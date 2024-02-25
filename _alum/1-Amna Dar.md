@@ -10,4 +10,4 @@ header:
   teaser: /assets/images/AD.jpg
 
 ---
-Amna is a Plant Biology major at OSU and has a long-standing interest in plant breeding.
+Amna was an undergrad researcher at the Shahid Lab in Fall 2023. She has a long-standing interest in plant breeding and is currently pursuing a Masters at OSU.

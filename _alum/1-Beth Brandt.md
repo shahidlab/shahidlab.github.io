@@ -10,4 +10,4 @@ header:
   teaser: /assets/images/Beth_Brandt.jpg
 
 ---
-Beth is a sophomore at OSU and studying Biology on a pre-dental track.
+Beth was an undergrad researcher at the Shahid Lab during 2023. She is pursuing a Biology major with pre-dental track at OSU.

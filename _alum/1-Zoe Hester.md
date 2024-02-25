@@ -10,4 +10,4 @@ header:
   teaser: /assets/images/Zoe_Hester.jpg
 
 ---
-Zoe is a Plant Biology major at OSU and loves all things related to plants!
+Zoe is a Plant Biology major at OSU and loves all things related to plants! Zoe was an undergrad researcher at the Shahid Lab during 2023.
