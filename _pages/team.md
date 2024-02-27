@@ -21,7 +21,7 @@ Lecturer, University of Sheffield (2024 -)
 
 Assistant Professor, Department of Plant Biology, Ecology, and Evolution, Oklahoma State University (2022-2024)
 
-[Saima's CV]({{ site.url }}{{ site.baseurl }}/assets/CV_Saima_Shahid_2023.pdf)  <a href="http://scholar.google.com/citations?user=lez4bcIAAAAJ&hl=en" itemprop="sameAs" rel="nofollow noopener noreferrer">
+[Saima's CV]({{ site.url }}{{ site.baseurl }}/assets/CV_Saima_Shahid_2024.pdf)  <a href="http://scholar.google.com/citations?user=lez4bcIAAAAJ&hl=en" itemprop="sameAs" rel="nofollow noopener noreferrer">
   <i class="fab fa-google" aria-hidden="true" style="color:#4c8bf5"> </i></a>
 <a href="https://orcid.org/0000-0001-9385-0925" itemprop="sameAs" rel="nofollow noopener noreferrer">
   <i class="fas fa-info-circle" aria-hidden="true" style="color:#ABC953"></i></a>
