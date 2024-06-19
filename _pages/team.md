@@ -17,9 +17,9 @@ author_profile: false
 [![image-left]({{ site.url }}{{ site.baseurl }}/assets/images/Saima Shahid.jpg)](){: .align-left}  
 ### **Saima Shahid**
 
-Lecturer, University of Sheffield (2024 -)
+Lecturer, Plants, Photosynthesis and Soil Cluster, School of Biosciences, University of Sheffield (2024 -)
 
-Assistant Professor, Department of Plant Biology, Ecology, and Evolution, Oklahoma State University (2022-2024)
+Adjunct Assistant Professor, Department of Plant Biology, Ecology, and Evolution, Oklahoma State University (2024 -)
 
 [Saima's CV]({{ site.url }}{{ site.baseurl }}/assets/CV_Saima_Shahid_2024.pdf)  <a href="http://scholar.google.com/citations?user=lez4bcIAAAAJ&hl=en" itemprop="sameAs" rel="nofollow noopener noreferrer">
   <i class="fab fa-google" aria-hidden="true" style="color:#4c8bf5"> </i></a>
@@ -29,8 +29,7 @@ Assistant Professor, Department of Plant Biology, Ecology, and Evolution, Oklaho
   <i class="fas fa-envelope fa-fw" style="color:#000000"></i></a>
 <a title="Twitter" href="https://twitter.com/psaima">
   <i class="fab fa-fw fa-twitter" style="color:#00acee"></i></a>  
-  Office: C62 Alfred Denny Building  
-  Lab: C45 Alfred Denny Building  
+  Office: C62 Alfred Denny Building. Lab: C45 Alfred Denny Building.  
 <br>
 ## Current Members
 <section class="page__content cf">

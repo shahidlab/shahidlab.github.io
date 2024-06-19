@@ -4,7 +4,7 @@ title: "Megan Adler"
 author: Megan Adler
 jobtitle: Graduate Student
 bio:
-excerpt: ""
+excerpt: "NSF GRFP fellow (2024 --)"
 author_profile: true
 header:
   teaser: /assets/images/MA.jpg
