@@ -64,10 +64,10 @@
   }
 }
 
-/* remove border*/
+/* remove border. SS: remove space from feature row title top*/
 .page__content {
   .archive__item-title {
-    margin-top: 1em;
+    margin-top: 0;
     border-bottom: none;
   }
 }

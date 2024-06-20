@@ -17,5 +17,4 @@ feature_row:
 {: style="text-align: center;
   letter-spacing: 0.25em;"}
 
-
 {% include feature_row type="left" %}
