@@ -17,7 +17,7 @@ We are looking for undergraduates, graduate students (M.S./Ph.D.), and postdocs 
   \- a brief research statement/cover letter describing your interests and why you think you will be a good fit for the lab, \\
   \- your CV with contact information for three references
 
-**Prospective Master's students** can apply to the [Sheffield Biosciences MRes program](https://www.sheffield.ac.uk/postgraduate/taught/courses/2024/biosciences-mres) (**MRes application deadline August 15, 2024 for international students**) for a year-long immersive research experience. Feel free to contact [Dr. Shahid](mailto:saima.shahid@sheffield.ac.uk) to discuss potential projects.
+**Prospective Master's students** can apply to the [Sheffield Biosciences MRes program](https://www.sheffield.ac.uk/postgraduate/taught/courses/2024/biosciences-mres) (**MRes application deadline August 15, 2024 for international students**) for a year-long immersive research experience. See [here](https://www.sheffield.ac.uk/postgraduate/taught/funding) for funding and scholarships for UK and international postgraduate students. Feel free to contact [Dr. Shahid](mailto:saima.shahid@sheffield.ac.uk) to discuss potential projects.
 
 ## About the Lab
 
