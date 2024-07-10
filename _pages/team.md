@@ -15,9 +15,9 @@ author_profile: false
 <h2  style="margin-top: 0">Principal Investigator</h2>
 
 [![image-left]({{ site.url }}{{ site.baseurl }}/assets/images/Saima Shahid.jpg)](){: .align-left}  
-### **Saima Shahid**
+### **Dr Saima Shahid**
 
-[Lecturer, Plants, Photosynthesis and Soil Cluster, School of Biosciences, University of Sheffield](https://www.sheffield.ac.uk/biosciences)
+[Lecturer, Plants, Photosynthesis and Soil Cluster, School of Biosciences, University of Sheffield](https://www.sheffield.ac.uk/biosciences/people/saima-shahid)
 
 [Adjunct Assistant Professor, Department of Plant Biology, Ecology, and Evolution, Oklahoma State University](https://cas.okstate.edu/plant_biology/about_us/dr_shahids_lab/)
 
