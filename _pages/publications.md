@@ -10,9 +10,9 @@ author_profile: true
 <script type="text/javascript" src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script>
 For a full list of publications see [google scholar](https://scholar.google.com/citations?user=lez4bcIAAAAJ&hl=en).
 
-[![](/assets/pubs/2025_mir.jpg)](https://doi.org/10.1371/journal.pcbi.1013663)18\.Vanek A, Griffiths-Jones S, Meyers B, __Shahid S__, Axtell MJ (2025) miRScore: a rapid and precise microRNA validation tool. *PLoS computational biology* 21 (11), e1013663.
+[![](/assets/pubs/2025_mir.jpg)](https://doi.org/10.1371/journal.pcbi.1013663)18\. Vanek A, Griffiths-Jones S, Meyers B, __Shahid S__, Axtell MJ (2025) miRScore: a rapid and precise microRNA validation tool. *PLoS computational biology* 21 (11), e1013663.
 
-[![](/assets/pubs/2025_microbe.jpg)](https://doi.org/10.1111/nph.70592)17\.Bartz P, Grullón-Penkova I, Cavaleri M, Reed S, __Shahid S__, Wood T, Bachelot B (2025) Experimental Warming Alters N Cycle. *New Phytologist* 248(6), pp.2750-2763.
+[![](/assets/pubs/2025_microbe.jpg)](https://doi.org/10.1111/nph.70592)17\. Bartz P, Grullón-Penkova I, Cavaleri M, Reed S, __Shahid S__, Wood T, Bachelot B (2025) Experimental Warming Alters N Cycle. *New Phytologist* 248(6), pp.2750-2763.
 
 [![](/assets/pubs/2022_TE.jpg)](https://doi.org/10.1146/annurev-genet-072920-015534)16\. Liu P, Cuerda-Gil D, __Shahid S__, Slotkin RK (2022) The epigenetic control of the transposable element lifecycle in plant genomes and beyond. *Annual Review of Genetics*.
 
