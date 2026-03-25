@@ -2,7 +2,7 @@
 layout: archive
 title: "Jen Crooks"
 author: Jen Crooks
-jobtitle:
+jobtitle: Integrated MS student
 bio:
 excerpt: ""
 author_profile: true

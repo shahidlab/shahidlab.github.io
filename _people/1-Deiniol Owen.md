@@ -2,7 +2,7 @@
 layout: archive
 title: "Deiniol Owen"
 author: Deiniol Owen
-jobtitle:
+jobtitle: Integrated MS student
 bio:
 excerpt: ""
 author_profile: true
