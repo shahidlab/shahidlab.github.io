@@ -21,7 +21,7 @@ Saima Shahid:
       url: "https://saimashahid.github.io"
 Beth Brandt:
   name: Beth Brandt
-  email: beth.brandt@okstate.edu
+  email:
   bio: ""
   bio_long: ""
   avatar: /assets/images/Beth_Brandt.jpg
@@ -34,7 +34,7 @@ Beth Brandt:
   twitter:
 Zoe Hester:
   name: Zoe Hester
-  email: zhester@okstate.edu
+  email:
   bio: ""
   bio_long: ""
   avatar: /assets/images/Zoe_Hester.jpg
@@ -47,7 +47,7 @@ Zoe Hester:
   twitter:
 Reese Jackson:
   name: Reese Jackson
-  email: reese.jackson@okstate.edu
+  email:
   bio: ""
   bio_long: ""
   avatar: /assets/images/Reese_Jackson.jpg
@@ -73,7 +73,7 @@ YOU:
   twitter:
 Amna Dar:
   name: Amna Dar
-  email: amna.dar@okstate.edu
+  email:
   bio: ""
   bio_long: ""
   avatar: /assets/images/AD.jpg
@@ -92,7 +92,7 @@ Megan Adler:
   avatar: /assets/images/MA.jpg
   title:
   github:
-  linkedin:
+  linkedin: megan-adler-b3718a155
   google:
     scholar:
   orc_id:
