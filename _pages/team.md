@@ -29,6 +29,7 @@ author_profile: false
   <i class="fab fa-fw fa-twitter" style="color:#00acee"></i></a>  
   Office: C62 Alfred Denny Building. Lab: C45 Alfred Denny Building.  
 <br>
+<br>
 ## Current Members
 <section class="page__content cf">
 
