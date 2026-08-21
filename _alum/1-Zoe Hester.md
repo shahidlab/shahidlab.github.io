@@ -4,10 +4,10 @@ title: "Zoe Hester"
 author: Zoe Hester
 jobtitle: Undergraduate researcher
 bio:
-excerpt: ""
+excerpt: "2023, Oklahoma State University"
 author_profile: true
 header:
   teaser: /assets/images/Zoe_Hester.jpg
 
 ---
-Zoe is a Plant Biology major at OSU and loves all things related to plants! Zoe was an undergrad researcher at the Shahid Lab during 2023.
+Zoe was a Plant Biology major at OSU and loves all things related to plants!
