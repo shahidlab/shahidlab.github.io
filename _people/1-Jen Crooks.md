@@ -4,10 +4,10 @@ title: "Jen Crooks"
 author: Jen Crooks
 jobtitle: Integrated MS student
 bio:
-excerpt: ""
+excerpt: "2025-2026, University of Sheffield"
 author_profile: true
 header:
   teaser: /assets/images/JC.jpg
 
 ---
-Jen is an integrated MS student at the University of Sheffield.
+Jen was an integrated MS student at the University of Sheffield.
