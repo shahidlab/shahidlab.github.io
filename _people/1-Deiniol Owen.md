@@ -4,10 +4,10 @@ title: "Deiniol Owen"
 author: Deiniol Owen
 jobtitle: Integrated MS student
 bio:
-excerpt: ""
+excerpt: "2025-2026, University of Sheffield"
 author_profile: true
 header:
   teaser: /assets/images/DO.jpg
 
 ---
-Deiniol is an integrated MS student at the University of Sheffield.
+Deiniol was an integrated MS student at the University of Sheffield.
