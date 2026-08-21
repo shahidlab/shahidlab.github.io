@@ -4,7 +4,7 @@ title: "Reese Jackson"
 author: Reese Jackson
 jobtitle: Undergraduate researcher
 bio:
-excerpt: ""
+excerpt: "Spring 2023, Oklahoma State University"
 author_profile: true
 header:
   teaser: /assets/images/Reese_Jackson.jpg
