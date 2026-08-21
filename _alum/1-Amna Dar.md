@@ -4,7 +4,7 @@ title: "Amna Dar"
 author: Amna Dar
 jobtitle: Undergraduate researcher
 bio:
-excerpt: ""
+excerpt: "Fall 2023, Oklahoma State University"
 author_profile: true
 header:
   teaser: /assets/images/AD.jpg
