@@ -1,4 +1,11 @@
 
+# Jekyll build output -- rebuilt fresh by the GitHub Actions Pages workflow,
+# shouldn't be committed (was previously tracked, causing noisy diffs on
+# every local build).
+_site/
+.jekyll-cache/
+.sass-cache/
+
 assets/pubs/.DS_Store
 assets/.DS_Store
 .DS_Store
