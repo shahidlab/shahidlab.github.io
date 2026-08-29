@@ -72,7 +72,7 @@ The [**University of Sheffield Faculty of Science fellowship pages**](https://ww
 ## Visiting Researchers / Collaborations
 {: #visiting}
 
-Please [contact Dr. Shahid](mailto:saima.shahid@sheffield.ac.uk) directly to discuss a visit or potential collaboration.
+We welcome collaborations that bring complementary biological systems, approaches or perspectives to questions in mobile small RNA, epigenetic memory and plant–biotic interactions. Please [contact Dr. Shahid](mailto:saima.shahid@sheffield.ac.uk) directly to discuss a visit or potential collaboration.
 
 ## Research Environment
 

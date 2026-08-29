@@ -13,7 +13,7 @@ feature_row:
       - url: /research/
         label: "Explore our research"
         class: "btn--brand-blue"
-      - url: /team/
+      - url: /people/
         label: "Meet the lab members"
         class: "btn--brand-green"
       - url: /join/
