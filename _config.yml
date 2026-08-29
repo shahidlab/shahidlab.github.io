@@ -100,31 +100,23 @@ analytics:
 
 
 # Site Author
-#author:
+author:
   name             : "Saima Shahid"
-  avatar           : "/assets/images/"
-#  bio              : ""
-#  location         : ""
-#  email            :
-#  links:
-#    - label: "Email"
-#      icon: "fas fa-fw fa-envelope-square"
-      # url: "mailto:your.name@email.com"
-#    - label: "Website"
-#      icon: "fas fa-fw fa-link"
-      # url: "https://your-website.com"
-#    - label: "Twitter"
-#      icon: "fab fa-fw fa-twitter-square"
-      # url: "https://twitter.com/"
-#    - label: "Facebook"
-#      icon: "fab fa-fw fa-facebook-square"
-      # url: "https://facebook.com/"
-#    - label: "GitHub"
-#      icon: "fab fa-fw fa-github"
-      # url: "https://github.com/"
-#    - label: "Instagram"
-#      icon: "fab fa-fw fa-instagram"
-      # url: "https://instagram.com/"
+  avatar           : "/assets/images/saima-shahid.jpg"
+  bio              : "Lecturer, Plants, Photosynthesis and Soil Cluster, School of Biosciences, University of Sheffield"
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "mailto:saima.shahid@sheffield.ac.uk"
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/psaima"
+    - label: "Google Scholar"
+      icon: "fab fa-fw fa-google"
+      url: "http://scholar.google.com/citations?user=lez4bcIAAAAJ&hl=en"
+    - label: "ORCID"
+      icon: "fas fa-fw fa-info-circle"
+      url: "https://orcid.org/0000-0001-9385-0925"
 
 # Site Footer
 footer:

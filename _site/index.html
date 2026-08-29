@@ -19,6 +19,9 @@
 <meta name="description" content="Laboratory of Saima Shahid at the University of Sheffield">
 
 
+  <meta name="author" content="Saima Shahid">
+  
+
 
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_US">
@@ -58,9 +61,37 @@
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Person",
-    "name": "Saima Shahid",
-    "url": "http://localhost:4000/"
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "http://localhost:4000/#saima-shahid",
+      "name": "Saima Shahid",
+      "image": "http://localhost:4000/assets/images/saima-shahid.jpg",
+      "url": "http://localhost:4000/team/",
+      "jobTitle": "Lecturer",
+      "worksFor": { "@id": "http://localhost:4000/#shahid-lab" },
+      "sameAs": [
+        "https://twitter.com/psaima",
+        "http://scholar.google.com/citations?user=lez4bcIAAAAJ&hl=en",
+        "https://orcid.org/0000-0001-9385-0925"
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "http://localhost:4000/#shahid-lab",
+      "name": "Shahid Lab",
+      "alternateName": "The Shahid Lab",
+      "image": "http://localhost:4000/assets/images/lab-logo.png",
+      "logo": "http://localhost:4000/assets/images/lab-logo.png",
+      "url": "http://localhost:4000/",
+      "founder": { "@id": "http://localhost:4000/#saima-shahid" },
+      "parentOrganization": {
+        "@type": "CollegeOrUniversity",
+        "name": "University of Sheffield",
+        "url": "https://www.sheffield.ac.uk"
+      }
+    }
+  ]
 }
 </script>
 

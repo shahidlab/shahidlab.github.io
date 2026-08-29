@@ -1,0 +1,36 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": {{ "/#saima-shahid" | absolute_url | jsonify }},
+      "name": "Saima Shahid",
+      "image": {{ "/assets/images/saima-shahid.jpg" | absolute_url | jsonify }},
+      "url": {{ "/team/" | absolute_url | jsonify }},
+      "jobTitle": "Lecturer",
+      "worksFor": { "@id": {{ "/#shahid-lab" | absolute_url | jsonify }} },
+      "sameAs": [
+        "https://twitter.com/psaima",
+        "http://scholar.google.com/citations?user=lez4bcIAAAAJ&hl=en",
+        "https://orcid.org/0000-0001-9385-0925"
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": {{ "/#shahid-lab" | absolute_url | jsonify }},
+      "name": "Shahid Lab",
+      "alternateName": "The Shahid Lab",
+      "image": {{ site.logo | absolute_url | jsonify }},
+      "logo": {{ site.logo | absolute_url | jsonify }},
+      "url": {{ "/" | absolute_url | jsonify }},
+      "founder": { "@id": {{ "/#saima-shahid" | absolute_url | jsonify }} },
+      "parentOrganization": {
+        "@type": "CollegeOrUniversity",
+        "name": "University of Sheffield",
+        "url": "https://www.sheffield.ac.uk"
+      }
+    }
+  ]
+}
+</script>
