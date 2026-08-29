@@ -14,10 +14,14 @@ author_profile: false
 ---
 <h2  style="margin-top: 0">Principal Investigator</h2>
 
-[![image-left]({{ site.url }}{{ site.baseurl }}/assets/images/Saima Shahid.jpg)](){: .align-left}  
-### **Dr Saima Shahid**
+<div class="clearfix-block" markdown="1">
+![Dr Saima Shahid]({{ site.url }}{{ site.baseurl }}/assets/images/saima-shahid.jpg){: .align-left .pi-photo}  
+### [**Dr Saima Shahid**](https://www.sheffield.ac.uk/biosciences/people/saima-shahid)
 
-[Lecturer, Plants, Photosynthesis and Soil Cluster, School of Biosciences, University of Sheffield](https://www.sheffield.ac.uk/biosciences/people/saima-shahid)
+[Lecturer | Plants, Photosynthesis and Soil Cluster](https://sheffield.ac.uk/biosciences/research/clusters/plants-photosynthesis-and-soil/pps-members)   
+School of Biosciences, University of Sheffield  
+Office: C62, Alfred Denny Building   
+Lab: C45, Alfred Denny Building
 
 [Saima's CV]({{ site.url }}{{ site.baseurl }}/assets/CV_Saima_Shahid_2026.pdf)  <a href="http://scholar.google.com/citations?user=lez4bcIAAAAJ&hl=en" itemprop="sameAs" rel="nofollow noopener noreferrer">
   <i class="fab fa-google" aria-hidden="true" style="color:#4c8bf5"> </i></a>
@@ -27,9 +31,8 @@ author_profile: false
   <i class="fas fa-envelope fa-fw" style="color:#000000"></i></a>
 <a title="Twitter" href="https://twitter.com/psaima">
   <i class="fab fa-fw fa-twitter" style="color:#00acee"></i></a>  
-  Office: C62 Alfred Denny Building. Lab: C45 Alfred Denny Building.  
-<br>
-<br>
+</div>
+
 ## Current Members
 <section class="page__content cf">
 
@@ -40,8 +43,5 @@ author_profile: false
 
 ## Alumni
 <section class="page__content cf">
-
-<div class="entries-{{ page.entries_layout }}">
-  {% include people-list.html entries=site.alum sort_by=page.sort_by sort_order=page.sort_order type=page.entries_layout %}
-</div>
+  {% include alumni-gallery.html entries=site.alum %}
 </section>

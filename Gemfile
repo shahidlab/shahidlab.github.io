@@ -1,4 +1,5 @@
 source "https://rubygems.org"
-gemspec
+gem "jekyll", "~> 4.4"
+gem "minimal-mistakes-jekyll", "~> 4.28"
 gem "webrick", "~> 1.7"
-gem 'jekyll-seo-tag'
+gem "jekyll-seo-tag"

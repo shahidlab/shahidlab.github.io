@@ -2,9 +2,10 @@
 layout: archive
 title: "Jackson Grimes"
 author: Jackson Grimes
-jobtitle: Undergraduate researcher
+jobtitle: Undergraduate researcher (2023)
+sort_order: 202310 # Fall 2023, per bio (offset from Amna Dar to stay unique)
 bio:
-excerpt: "Fall 2023, Oklahoma State University"
+excerpt: "Oklahoma State University"
 author_profile: true
 header:
   teaser: /assets/images/ath_flower.jpg

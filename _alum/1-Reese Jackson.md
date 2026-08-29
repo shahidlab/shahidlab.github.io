@@ -2,9 +2,10 @@
 layout: archive
 title: "Reese Jackson"
 author: Reese Jackson
-jobtitle: Undergraduate researcher
+jobtitle: Undergraduate researcher (2023)
+sort_order: 202303
 bio:
-excerpt: "Spring 2023, Oklahoma State University"
+excerpt: "Oklahoma State University"
 author_profile: true
 header:
   teaser: /assets/images/Reese_Jackson.jpg

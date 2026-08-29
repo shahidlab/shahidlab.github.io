@@ -7,7 +7,7 @@ Saima Shahid:
   email: saima.shahid@sheffield.ac.uk
   bio: "Lecturer"
   bio_long: ""
-  avatar: /assets/images/Saima Shahid.jpg
+  avatar: /assets/images/saima-shahid.jpg
   title: Lecturer
   github:
   linkedin: saima-shahid
@@ -129,6 +129,19 @@ Deiniol Owen:
   bio: ""
   bio_long: ""
   avatar: /assets/images/DO.jpg
+  title:
+  github:
+  linkedin:
+  google:
+    scholar:
+  orc_id:
+  twitter:
+Deiniol Owen:
+  name: Amelia Lyons
+  email: alyons1@sheffield.ac.uk
+  bio: ""
+  bio_long: ""
+  avatar: /assets/images/ath_flower.jpg
   title:
   github:
   linkedin:

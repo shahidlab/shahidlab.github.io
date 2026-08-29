@@ -2,9 +2,10 @@
 layout: archive
 title: "Zoe Hester"
 author: Zoe Hester
-jobtitle: Undergraduate researcher
+jobtitle: Undergraduate researcher (2023)
+sort_order: 202301
 bio:
-excerpt: "2023, Oklahoma State University"
+excerpt: "Oklahoma State University"
 author_profile: true
 header:
   teaser: /assets/images/Zoe_Hester.jpg

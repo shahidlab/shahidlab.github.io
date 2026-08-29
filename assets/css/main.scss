@@ -4,6 +4,9 @@
 $link-color:  #FF7300 !default;
 @charset "utf-8";
 
+// Brand color override (theme default is #0092ca) -- must be set before the skin import
+$primary-color: #3e3d4e !default;
+
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
 
@@ -44,4 +47,111 @@ $link-color:  #FF7300 !default;
 }
 .header-link {
   display: none;
+}
+
+// --- Site-specific layout overrides (previously hand-edited into the vendored theme) ---
+
+// Center footer text instead of the theme's default float layout
+.page__footer {
+  float: none;
+  text-align: center;
+}
+
+// Don't reserve space for a right sidebar -- content spans full width
+.page {
+  @include breakpoint($large) {
+    width: 100%;
+  }
+
+  @include breakpoint($x-large) {
+    width: 100%;
+  }
+}
+
+.page__related {
+  @include breakpoint($large) {
+    width: 100%;
+  }
+
+  @include breakpoint($x-large) {
+    width: 100%;
+  }
+}
+
+// Remove top margin/border above feature-row titles (homepage welcome row only --
+// scoped to .feature__wrapper so it doesn't override the Team page grid's own
+// image-to-name spacing, which uses the same .archive__item-title class)
+.feature__wrapper .archive__item-title {
+  margin-top: 0;
+  border-bottom: none;
+}
+
+// Alumni gallery: match the orange link color used by Current Members' names
+// (those are real links; alumni names aren't, since there's no individual
+// page to link to). Font size/spacing already match via .grid__item.
+.alumni-gallery__name {
+  color: $link-color;
+}
+
+// Grid teaser photos (News, Current Members, Alumni -- all use this class via
+// people-single.html) have no size styling in the theme, so source images of
+// wildly different dimensions/aspect ratios render at their natural size.
+// Crop to a fixed square so every card looks uniform regardless of source photo.
+.archive__item-teaser-person {
+  position: relative;
+  overflow: hidden;
+  border-radius: $border-radius;
+  aspect-ratio: 1 / 1;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+// Principal Investigator photo: plain markdown image (not a grid card), so it
+// otherwise renders at full natural size (was 1236px vs. 293px for lab
+// members' teaser photos). Match the same square-crop treatment/scale.
+.pi-photo {
+  width: 293px;
+  max-width: 45%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: $border-radius;
+}
+
+// .entries-grid holds floated .grid__item cards (Current Members, Alumni,
+// News) but has no clearfix of its own, so it collapses to zero height and
+// the floats spill out uncontained -- causing inconsistent gaps before
+// whatever heading/content follows, depending on how much float escapes.
+// The theme's own ".cf" utility doesn't actually fix this either (it's just
+// `clear: both`, not a real clearfix). Give the grid wrapper a proper one.
+//
+// .clearfix-block is the same fix for hand-written page content: any floated
+// image + text block that precedes a heading (PI bio on Team, the intro
+// photo on Join) needs the same treatment. Wrap that content in
+// <div class="clearfix-block" markdown="1"> so the heading after it gets a
+// reliable, consistent gap.
+//
+// Space is controlled here, on the PRECEDING content, rather than as
+// margin-top on the following heading. margin-top interacts with float
+// clearance in ways that aren't simply additive (the browser can absorb an
+// explicit margin into the clearance calculation instead of adding it on
+// top), which made headings with identical margin-top render with visibly
+// different gaps depending on what they followed -- and it doesn't reduce
+// to a fixed value on mobile either, once a floated photo stops floating
+// and stacks above the text. padding-bottom on a properly clearfixed
+// container has none of that ambiguity: once the container correctly wraps
+// its content (floated or not), padding always adds the same fixed space
+// after it, every time.
+.entries-grid,
+.clearfix-block {
+  padding-bottom: 1.5em;
+
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
 }

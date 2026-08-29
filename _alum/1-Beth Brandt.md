@@ -2,9 +2,10 @@
 layout: archive
 title: "Beth Brandt"
 author: Beth Brandt
-jobtitle: Undergraduate researcher
+jobtitle: Undergraduate researcher (2023)
+sort_order: 202301 # month unknown, placeholder within 2023 -- adjust if known
 bio:
-excerpt: "2023, Oklahoma State University"
+excerpt: "Oklahoma State University"
 author_profile: true
 header:
   teaser: /assets/images/Beth_Brandt.jpg
