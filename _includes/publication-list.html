@@ -1,0 +1,51 @@
+{% comment %}
+Publication list: entries grouped into one card per year (site.data.publications
+is already ordered newest-first, so group_by preserves that order). Each entry
+within a card keeps its own image + details row.
+Image uses object-fit: contain (not cover) since these are paper screenshots with
+arbitrary aspect ratios -- cropping could cut off actual figure content.
+{% endcomment %}
+{% assign pubs_by_year = site.data.publications | group_by: "year" %}
+<div class="publication-list">
+  {% for group in pubs_by_year %}
+    <article class="publication-card">
+      <h3 class="publication-card__year-heading">{{ group.name }}</h3>
+      {% for pub in group.items %}
+        <div class="publication-card__entry">
+          <div class="publication-card__image">
+            <a href="{{ pub.link }}" target="_blank" rel="noopener noreferrer">
+              <img src="{{ pub.image | relative_url }}" alt="Thumbnail for &quot;{{ pub.title | markdownify | strip_html }}&quot;">
+            </a>
+          </div>
+          <div class="publication-card__body">
+            <h3 class="publication-card__title">
+              <a href="{{ pub.link }}" target="_blank" rel="noopener noreferrer">{{ pub.title | markdownify | remove: "<p>" | remove: "</p>" | strip }}</a>
+            </h3>
+            <p class="publication-card__authors">{{ pub.authors | markdownify | remove: "<p>" | remove: "</p>" | strip }}{% if pub.note %} <span class="publication-card__note">{{ pub.note }}</span>{% endif %}</p>
+            <div class="publication-card__meta-row">
+              <p class="publication-card__citation"><em>{{ pub.journal }}</em></p>
+              <p class="publication-card__actions">
+                <a href="{{ pub.link }}" target="_blank" rel="noopener noreferrer" class="publication-card__doi-btn">DOI</a>
+                <span class="altmetric-embed" data-badge-type="donut" data-hide-no-mentions="true" data-doi="{{ pub.link | split: "doi.org/" | last }}"></span>
+                <span class="__dimensions_badge_embed__" data-doi="{{ pub.link | split: "doi.org/" | last }}" data-style="small_circle" data-hide-zero-citations="true"></span>
+              </p>
+            </div>
+          </div>
+          {% if pub.highlighted_in %}
+            <div class="publication-card__highlighted">
+              <p class="publication-card__highlighted-label">Highlighted in</p>
+              <ul>
+                {% for h in pub.highlighted_in %}
+                  <li><em>{{ h.source }}</em> &mdash; <a href="{{ h.url }}" target="_blank" rel="noopener noreferrer">{{ h.text }}</a></li>
+                {% endfor %}
+              </ul>
+            </div>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </article>
+  {% endfor %}
+</div>
+
+<script type="text/javascript" src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script>
+<script async src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script>

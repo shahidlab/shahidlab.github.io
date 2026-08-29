@@ -85,7 +85,6 @@ GEM
       octokit (~> 4.2)
     jekyll-include-cache (0.2.2)
       jekyll (>= 3.7, < 5.0)
-    jekyll-paginate (1.1.0)
     jekyll-remote-theme (0.5.2)
       addressable (~> 2.0)
       jekyll (>= 3.5, < 5.0)
@@ -195,7 +194,6 @@ DEPENDENCIES
   jekyll-feed
   jekyll-gist
   jekyll-include-cache
-  jekyll-paginate
   jekyll-remote-theme
   jekyll-seo-tag
   jekyll-sitemap
@@ -240,7 +238,6 @@ CHECKSUMS
   jekyll-feed (0.17.0) sha256=689aab16c877949bb9e7a5c436de6278318a51ecb974792232fd94d8b3acfcc3
   jekyll-gist (1.5.0) sha256=495b6483552a3e2975a2752964ea7acddd545bc6e13ce2be15a50cec8d4c9f0f
   jekyll-include-cache (0.2.2) sha256=fe31c75187c37b035fb3b62b689f1ca284f1871c3bb7f607a8bdf3cc439b0aa1
-  jekyll-paginate (1.1.0) sha256=880aadf4b02529a93541d508c5cbb744f014cbfc071d0263a31f25ec9066eb64
   jekyll-remote-theme (0.5.2) sha256=d41ba7358b7baa7c8f8f4ee03112bbae8dba90235e97d88c25b90a032abb6f55
   jekyll-sass-converter (3.1.0) sha256=83925d84f1d134410c11d0c6643b0093e82e3a3cf127e90757a85294a3862443
   jekyll-seo-tag (2.9.0) sha256=0260015a8e1df9bf195cdfb0c675b7b2883fd8cbf12556e1c1cbe36a831c6852

@@ -1,0 +1,160 @@
+# Publications list for _pages/publications.md, rendered via
+# _includes/publication-list.html. Newest first.
+#
+# Fields: image, journal, year, title, authors, link (required);
+# highlighted_in (optional list of {text, source, url}); note (optional, e.g. equal contribution).
+
+- image: /assets/pubs/2025_mir.jpg
+  journal: "PLoS Computational Biology"
+  year: 2025
+  title: "miRScore: a rapid and precise microRNA validation tool"
+  authors: "Vanek A, Griffiths-Jones S, Meyers B, **Shahid S**, Axtell MJ"
+  citation: "21 (11), e1013663"
+  link: https://doi.org/10.1371/journal.pcbi.1013663
+
+- image: /assets/pubs/2025_microbe.png
+  journal: "New Phytologist"
+  year: 2025
+  title: "Experimental warming alters free-living nitrogen fixation in a humid tropical forest"
+  authors: "Bartz P, Grullón-Penkova I, Cavaleri M, Reed S, **Shahid S**, Wood T, Bachelot B"
+  citation: "248(6), pp.2750-2763"
+  link: https://doi.org/10.1111/nph.70592
+
+- image: /assets/pubs/2022_TE.png
+  journal: "Annual Review of Genetics"
+  year: 2022
+  title: "The epigenetic control of the transposable element lifecycle in plant genomes and beyond"
+  authors: "Liu P, Cuerda-Gil D, **Shahid S**, Slotkin RK"
+  citation: ""
+  link: https://doi.org/10.1146/annurev-genet-072920-015534
+
+- image: /assets/pubs/2020_long_reads.png
+  journal: "Current Opinion in Plant Biology"
+  year: 2020
+  title: "The current revolution in transposable element biology enabled by long reads"
+  authors: "**Shahid S**, Slotkin RK"
+  citation: "54, 49-56"
+  link: https://doi.org/10.1016/j.pbi.2019.12.012
+
+- image: /assets/pubs/2020_aphid.png
+  journal: "Insect Biochemistry and Molecular Biology"
+  year: 2020
+  title: "Soybean aphids adapted to host-plant resistance by down regulating putative effectors and up regulating transposable elements"
+  authors: "Yates-Stewart AD, Daron J, Wijeratne S, **Shahid S**, Edgington HA, Slotkin RK, Michel A"
+  citation: "121, 103363"
+  link: https://doi.org/10.1016/j.ibmb.2020.103363
+
+- image: /assets/pubs/2019_hgt.png
+  journal: "Nature Plants"
+  year: 2019
+  title: "Convergent horizontal gene transfer and cross-talk of mobile nucleic acids in parasitic plants"
+  authors: "Yang Z, Wafula EK, Kim G, **Shahid S**, McNeal JR, Ralph PE, Timilsena PR, Yu WB, Kelly EA, Zhang H, Person TN"
+  citation: "5(9), 991-1001"
+  link: https://doi.org/10.1038/s41477-019-0458-0
+
+- image: /assets/pubs/2019_ALY1.png
+  journal: "The Plant Cell"
+  year: 2019
+  title: "The RNA export factor ALY1 enables genome-wide RNA-directed DNA methylation"
+  authors: "Choudury S, **Shahid S**, Cuerda-Gil D, Panda K, Cullen A, Ashraf QUA, Sigman MJ, McCue AD, Slotkin RK"
+  citation: "31(4), 759-774"
+  link: http://dx.doi.org/10.1105/tpc.18.00624
+
+- image: /assets/pubs/2018_cuscuta.png
+  journal: "Nature"
+  year: 2018
+  title: "MicroRNAs from the parasitic plant *Cuscuta campestris* target host messenger RNAs"
+  authors: "**Shahid S**, Kim G, Johnson NR, Wafula EK, Wang F, Coruh C, Bernal-Galeano V, Phifer T, dePamphilis CW, Westwood JH and Axtell MJ"
+  citation: "553, 82-85"
+  link: http://dx.doi.org/10.1038/nature25027
+  highlighted_in:
+    - source: "NCRI"
+      text: "German Martinez, Kirsten Krause"
+      url: http://ncri.amegroups.com/article/view/4462
+    - source: "Molecular Plant"
+      text: "Jianqiang Wu"
+      url: https://www.sciencedirect.com/science/article/pii/S1674205218300546
+    - source: "Nature Reviews Genetics"
+      text: "Michelle Trenkmann"
+      url: https://www.nature.com/articles/nrg.2018.3
+
+- image: /assets/pubs/2016_jute.png
+  journal: "Nature Plants"
+  year: 2017
+  title: "Comparative genomics of two jute species and insight into fiber biogenesis"
+  authors: "Islam MS et al. (including **Shahid S** and Alam M)"
+  citation: "3, 16223"
+  link: http://dx.doi.org/10.1038/nplants.2016.223
+
+- image: /assets/pubs/2016_waxy.png
+  journal: "Journal of Cereal Science"
+  year: 2016
+  title: "Variability in amylose content of Bangladeshi rice cultivars due to unique SNPs in *Waxy* allele"
+  authors: "**Shahid S**\\*, Begum R\\*, Razzaque S, Jesmin, Seraj ZI"
+  citation: "71, 1-9"
+  note: "* Equal contribution"
+  link: http://dx.doi.org/10.1016/j.jcs.2016.07.006
+
+- image: /assets/pubs/2015_moss.png
+  journal: "The Plant Cell"
+  year: 2015
+  title: "Comprehensive annotation of *Physcomitrella patens* small RNA loci reveals that the heterochromatic short interfering RNA pathway is largely conserved in land plants"
+  authors: "Coruh C, Cho SH, **Shahid S**, Liu Q, Wierzbicki A, Axtell MJ"
+  citation: "27(8), 2148-2162"
+  link: http://dx.doi.org/10.1105/tpc.15.00228
+
+- image: /assets/pubs/2015_g.png
+  journal: "Biochemical Journal"
+  year: 2015
+  title: "A stable RNA G-quadruplex within the 5′-UTR of *Arabidopsis thaliana ATR* mRNA inhibits translation"
+  authors: "Kwok CK, Ding Y, **Shahid S**, Assmann SM, Bevilacqua PC"
+  citation: "467(1), 91-102"
+  link: http://dx.doi.org/10.1042/BJ20141063
+
+- image: /assets/pubs/2014_forest.png
+  journal: "Current Opinion in Plant Biology"
+  year: 2014
+  title: "Seeing the forest for the trees: annotating small RNA producing genes in plants"
+  authors: "Coruh C, **Shahid S**, Axtell MJ"
+  citation: "18, 87-95"
+  link: https://dx.doi.org/10.1016/j.pbi.2014.02.008
+
+- image: /assets/pubs/2014_shortstack.png
+  journal: "Methods"
+  year: 2013
+  title: "Identification and annotation of small RNA genes using ShortStack"
+  authors: "**Shahid S**, Axtell MJ"
+  citation: "67(1), 20-27"
+  link: http://dx.doi.org/10.1016/j.ymeth.2013.10.004
+
+- image: /assets/pubs/2013_amborella.png
+  journal: "Science"
+  year: 2013
+  title: "The *Amborella* genome and the evolution of flowering plants"
+  authors: "*Amborella* Genome Project"
+  citation: "342(6165), 1241089"
+  link: http://dx.doi.org/10.1126/science.1241089
+
+- image: /assets/pubs/2011_promoters.png
+  journal: "Algorithms for Molecular Biology"
+  year: 2011
+  title: "Prediction of plant promoters based on hexamers and random triplet pair analysis"
+  authors: "Azad A, **Shahid S**, Noman N, Lee H"
+  citation: "6(1), 19"
+  link: http://dx.doi.org/10.1186/1748-7188-6-19
+
+- image: /assets/pubs/2011_horkuch.png
+  journal: "Functional Plant Biology"
+  year: 2011
+  title: "Physiology and gene expression of the rice landrace Horkuch under salt stress"
+  authors: "Lisa LA, Elias SM, Rahman MS, **Shahid S**, Iwasaki T, Hasan AM, Kosuge K, Fukami Y, Seraj ZI"
+  citation: "38(4), 282-292"
+  link: http://dx.doi.org/10.1071/FP10198
+
+- image: /assets/pubs/2010_reads.png
+  journal: "Plant Tissue Culture and Biotechnology"
+  year: 2010
+  title: "READS - a resource for plant non-coding regulatory sequence analysis"
+  authors: "**Shahid S**, Elias SM, Biswas S, Seraj ZI"
+  citation: "20(2), 211-223"
+  link: http://dx.doi.org/10.3329/ptcb.v20i2.6916

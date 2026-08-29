@@ -1,11 +1,17 @@
 ---
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
-$link-color:  #FF7300 !default;
 @charset "utf-8";
+@use "sass:color";
+
+$link-color:  #FF7300 !default;
 
 // Brand color override (theme default is #0092ca) -- must be set before the skin import
 $primary-color: #3e3d4e !default;
+
+// Page background -- a subtle cool blue-grey (air skin default is flat #eeeeee)
+// that echoes the lab logo's blue/teal leaves instead of a neutral grey.
+$background-color: #eef3f5 !default;
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
@@ -20,33 +26,441 @@ $primary-color: #3e3d4e !default;
   text-decoration: underline;
 }
 
-// Publication.  Need custom formatting to get the thumb on the left. Adapted from https://xgitlab.cels.anl.gov/argo/website/blob/master/assets/css/main.scss
-.pub {
-    p {
-        clear: left;
-    }
-
-    img {
-        border-radius: $border-radius;
-        height: 100px;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.35);
-        float: left;
-        margin-right: 10px;
-        margin-bottom: 20px;
-    }
-
-    a > img:hover {
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5) !important;
-    }
-
-    .square {
-	width: auto;
-	height: auto;
-    }
 // Hide permalink buttons beside header text
-}
 .header-link {
   display: none;
+}
+
+// Homepage CTA buttons -- colors sampled from the lab logo's leaf palette,
+// following the logo's own blue -> green -> yellow progression across the
+// three buttons (the accent yellow highlights the final "Join us" CTA).
+// Blue/green are muted toward the site's own $muted-text-color so they read
+// as calm, professional accents rather than bright/saturated brand colors.
+$brand-blue: color.mix(#06399a, $muted-text-color, 65%);
+$brand-green: color.mix(#129e48, $muted-text-color, 65%);
+$brand-teal: color.mix(#099fcc, $muted-text-color, 65%);
+
+.btn--brand-blue {
+  background-color: $brand-blue;
+  color: #fff;
+
+  &:visited {
+    color: #fff;
+  }
+
+  &:hover {
+    background-color: color.mix($brand-blue, black, 80%);
+    color: #fff;
+  }
+}
+
+.btn--brand-green {
+  background-color: $brand-green;
+  color: #fff;
+
+  &:visited {
+    color: #fff;
+  }
+
+  &:hover {
+    background-color: color.mix($brand-green, black, 80%);
+    color: #fff;
+  }
+}
+
+.btn--brand-yellow {
+  background-color: #e1d359;
+  color: #231f20;
+
+  &:visited {
+    color: #231f20;
+  }
+
+  &:hover {
+    background-color: color.mix(#e1d359, black, 85%);
+    color: #231f20;
+  }
+}
+
+.btn--brand-teal {
+  background-color: $brand-teal;
+  color: #fff;
+
+  &:visited {
+    color: #fff;
+  }
+
+  &:hover {
+    background-color: color.mix($brand-teal, black, 80%);
+    color: #fff;
+  }
+}
+
+// Multi-button row rendered by the local _includes/feature_row override
+// (f.btns) -- placed as a sibling <p> after .archive__item-excerpt, matching
+// the theme's own single-button (f.url) markup, so button text isn't nested
+// inside the excerpt's smaller font-size context. The extra margin-top
+// widens the gap above the buttons to match the visual weight of the title
+// -> excerpt gap above it.
+// Selector qualified with .feature__wrapper (not just .feature__btns) so its
+// specificity beats the theme's ".page__content p { margin: 0 0 1.3em; }"
+// reset, which otherwise wins the cascade and zeroes out margin-top here.
+.feature__wrapper .feature__btns {
+  margin-top: 1.25em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75em;
+
+  .btn {
+    margin-bottom: 0;
+  }
+}
+
+// Publications: image + details card per entry (see _includes/publication-list.html).
+// Image uses a fixed frame with object-fit: contain rather than cropping --
+// these are paper screenshots of arbitrary aspect ratio, so cropping (as used
+// for photo teasers elsewhere) could cut off actual figure content.
+.publication-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75em;
+}
+
+// One card per year, containing one or more stacked .publication-card__entry
+// rows (see _includes/publication-list.html, which groups site.data.publications
+// by year).
+.publication-card {
+  padding: 0.75em 1.25em;
+  background-color: #f8f8f8; // slightly lighter than the page background (#eee) for subtle card contrast
+  border-radius: $border-radius;
+}
+
+.publication-card__year-heading {
+  margin: 0.25em 0 0.5em;
+  text-align: center;
+  font-size: 20px;
+  color: $primary-color;
+}
+
+.publication-card__entry {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start; // image top aligns with the title row, regardless of which column ends up taller
+  gap: 1.25em;
+  padding: 0.75em 0;
+  // Full page-width card (no max-width) -- the image below is sized to
+  // roughly match the text block's height instead, so the card doesn't
+  // gain excess empty space just because it spans the full row.
+
+  // Separator between multiple entries stacked in the same year's card.
+  & + & {
+    border-top: 1px solid $border-color;
+  }
+}
+
+.publication-card__image {
+  flex: 0 0 auto;
+  // Portrait "letter page" proportions (matches US Letter's 8.5:11 ratio)
+  // rather than a square, since these thumbnails are screenshots/figures
+  // from journal article pages. Sized to roughly match the text block's
+  // height rather than towering over a short 3-4 line entry.
+  width: 100px;
+  height: 129px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border-radius: $border-radius;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+}
+
+.publication-card__body {
+  flex: 1 1 300px;
+  min-width: 0;
+}
+
+.publication-card__title {
+  margin: 0 0 0.15em;
+  line-height: 1.25;
+  // $type-size-5 (1em) computes to 22px inside .grid__item's nested font-size
+  // context but only 16px here -- use the literal pixel value to guarantee
+  // an exact match with lab member name links rather than relying on em math
+  // that depends on ancestor context.
+  font-size: 22px;
+
+  // .page__content a { text-decoration: none; } (above) already handles the
+  // underline-on-hover state site-wide; just set the color here.
+  a {
+    color: $link-color;
+  }
+}
+
+// Authors/citation are qualified with the .publication-card__body ancestor
+// (not just their own class) so their specificity beats the theme's
+// ".page__content p { margin: 0 0 1.3em; }" reset, which otherwise wins the
+// cascade and forces its own much larger margin-bottom here.
+.publication-card__body .publication-card__authors {
+  margin-bottom: 0.15em;
+  line-height: 1.4;
+  color: $muted-text-color;
+}
+
+.publication-card__body .publication-card__citation {
+  margin-bottom: 0;
+  line-height: 1.4;
+  color: $primary-color;
+}
+
+// Journal name + DOI button/badges share a row. No margin-top here -- the
+// authors row above already contributes its own 0.15em margin-bottom, so
+// adding more here would double the gap versus the title-to-authors row.
+.publication-card__meta-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75em;
+  margin: 0;
+
+  .publication-card__citation,
+  .publication-card__actions {
+    margin: 0;
+  }
+}
+
+.publication-card__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75em;
+}
+
+// DOI button and the two badges are all forced to the same explicit
+// height/width and centered via flex, since each renders through a
+// different mechanism (a plain link, an <img>, an SVG badge scaled as a
+// unit) that won't naturally agree on a height on its own.
+$pub-action-size: 26px;
+
+.publication-card__doi-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: $pub-action-size;
+  padding: 0 0.9em;
+  font-size: $type-size-7;
+  font-weight: bold;
+  // Same logo-leaf yellow used for the homepage "Join us" button.
+  background-color: #e1d359;
+  border: 1px solid #e1d359;
+  border-radius: 2em;
+  box-sizing: border-box;
+
+  // Explicit :link/:visited so a link the browser already has in its
+  // history (e.g. a DOI opened earlier while checking figures) can't fall
+  // back to the browser's default visited-link color instead of ours --
+  // that's what caused some DOI buttons to render in a different color.
+  &,
+  &:link,
+  &:visited {
+    color: #fff;
+  }
+
+  &:hover {
+    color: #e1d359;
+    background-color: #fff;
+    text-decoration: none;
+  }
+}
+
+.altmetric-embed {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  width: $pub-action-size;
+  height: $pub-action-size;
+
+  // Altmetric's embed.js renders a 64x64 <img> with hardcoded width/height
+  // attributes -- override to match the DOI button's height.
+  img {
+    width: $pub-action-size !important;
+    height: $pub-action-size !important;
+  }
+
+  // With data-hide-no-mentions, papers with zero Altmetric coverage (no
+  // tracked score at all, as opposed to a score of exactly 0) get this class
+  // instead of a real badge -- otherwise they'd show a broken/placeholder
+  // "?" image. Our own display:flex !important above would otherwise force
+  // that empty badge visible again, so it needs its own !important to win.
+  &.altmetric-hidden {
+    display: none !important;
+  }
+}
+
+.__dimensions_badge_embed__ {
+  // The "small_circle" style's default rendering is a 64x64 SVG badge built
+  // from several layered pieces (gradient, blurred mask, overlaid score/label
+  // text) that don't reliably scale and clip together as one unit -- it can
+  // paint as a stray fragment instead of the full badge. Their own markup
+  // includes a plain static fallback PNG (baked-in icon + count, normally
+  // kept invisible as an accessibility/fallback layer) -- show that instead
+  // and hide the fragile SVG layers, since a plain <img> resizes reliably
+  // exactly like the Altmetric badge does.
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  width: $pub-action-size !important;
+  height: $pub-action-size !important;
+  overflow: hidden !important;
+
+  // Their ancestor boxes default to 64x64 -- if left alone, flex-centering a
+  // 64px-tall box inside our 26px-tall clipped wrapper crops most of it away
+  // (only the vertical sliver that lands inside the 26px window survives).
+  // Shrink every ancestor box down to match so nothing overflows to clip.
+  .__dimensions_Badge,
+  .__dimensions_Badge_Image {
+    width: $pub-action-size !important;
+    height: $pub-action-size !important;
+  }
+
+  .__dimensions_Badge_Image > *:not(.__dimensions_png) {
+    display: none !important;
+  }
+
+  .__dimensions_png {
+    position: static !important;
+    opacity: 1 !important;
+    width: $pub-action-size !important;
+    height: $pub-action-size !important;
+    max-width: none !important;
+  }
+
+  // Citation-count legend/detail popover -- keep it hidden regardless of
+  // which internal state class their script attaches, so it can't leak
+  // into the row layout.
+  .__dimensions_Badge_Legend_padding {
+    display: none !important;
+  }
+}
+
+.publication-card__note {
+  font-style: italic;
+  font-size: $type-size-6;
+}
+
+.publication-card__highlighted {
+  flex-basis: 100%;
+  margin-top: 0.5em;
+  padding-top: 1em;
+  border-top: 1px solid $border-color;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    margin-bottom: 0.25em;
+  }
+}
+
+.publication-card__highlighted-label {
+  margin: 0 0 0.5em;
+  font-size: $type-size-7;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: $muted-text-color;
+}
+
+// Join page: postdoctoral fellowship routes shown as a card grid (see
+// _pages/join.md) instead of a long linked list.
+.fellowship-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25em;
+  margin: 1.5em 0;
+}
+
+.fellowship-card {
+  padding: 1.25em;
+  background-color: #f8f8f8;
+  border-radius: $border-radius;
+
+  h4 {
+    margin: 0 0 0.4em;
+    font-size: $type-size-5;
+  }
+
+  p {
+    margin: 0;
+    font-size: $type-size-6;
+    color: $muted-text-color;
+  }
+
+  a {
+    color: $link-color;
+  }
+}
+
+// Plain-markdown .btn links inside page body copy (join.md's external
+// .btn--external links, and the join-nav jump links) sit directly in
+// .page__content with no .feature__item ancestor, so the theme's own
+// $type-size-6 resolves to 0.75em -- smaller than the homepage CTA buttons,
+// which get an extra 1.125em multiplier from .feature__item (0.75 * 1.125 =
+// 0.84375em). Match that ratio here so all .btn text reads the same size
+// across the site. Scoped to these specific buttons rather than ".btn"
+// generally -- applying it broadly would also catch the homepage CTAs
+// themselves, compounding on top of the 1.125em they already inherit from
+// .feature__item and making them larger than intended, not matching.
+.join-nav .btn,
+.page__content .btn--external {
+  font-size: 0.84375em;
+}
+
+// Join page: in-page jump links to the sections below (PhD, Postdoctoral
+// fellowships, Undergraduate research, Visiting researchers) -- same solid
+// pill-button style as the homepage CTAs, rather than a JS-driven tab panel.
+.join-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75em;
+  margin: 1.5em 0;
+
+  .btn {
+    margin-bottom: 0;
+  }
+}
+
+// External links (to sheffield.ac.uk etc.) styled as a lighter outline pill
+// -- same rounded shape as the publication DOI button, but deliberately
+// NOT solid-filled, so they read as a distinct, secondary "leaves the site"
+// action rather than competing visually with the solid-colored in-page
+// jump-nav buttons above them on the same page.
+.btn--external {
+  background-color: transparent;
+  border: 1px solid $primary-color;
+  border-radius: 2em;
+
+  &,
+  &:link,
+  &:visited {
+    color: $primary-color;
+  }
+
+  &:hover {
+    background-color: $primary-color;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .fa-external-link-alt {
+    font-size: 0.85em;
+  }
 }
 
 // --- Site-specific layout overrides (previously hand-edited into the vendored theme) ---
@@ -55,6 +469,20 @@ $primary-color: #3e3d4e !default;
 .page__footer {
   float: none;
   text-align: center;
+}
+
+// The theme caps #main (every layout, including splash pages like the
+// homepage), the masthead nav bar's inner wrapper, AND the page-header hero
+// overlay's title wrapper -- three separate elements -- to $max-width
+// (1280px) once the viewport passes the x-large breakpoint, each centered
+// via auto margins with growing side margins on wider screens. Overriding
+// only #main (and later the masthead) still left this third one capped,
+// which is why page titles like "Research" sat indented ~360px from the
+// body text/nav/logo on wide screens instead of sharing their left edge.
+#main,
+.masthead__inner-wrap,
+.page__hero--overlay .wrapper {
+  max-width: 100%;
 }
 
 // Don't reserve space for a right sidebar -- content spans full width
@@ -84,6 +512,18 @@ $primary-color: #3e3d4e !default;
 .feature__wrapper .archive__item-title {
   margin-top: 0;
   border-bottom: none;
+}
+
+// The theme sets feature-row excerpt text at $type-size-6 (0.75em), which
+// compounds with .feature__item's own 1.125em ancestor context to render
+// noticeably smaller than plain body copy elsewhere on the site (13.5px vs
+// 16px at the mobile breakpoint, 16.6px vs 22px at wide desktop widths --
+// the site's type scale is fluid, so a literal px match only works at one
+// viewport size). Cancel out the 1.125em multiplier instead (1 / 1.125 =
+// 0.8889em) so the resolved size is exactly 1x the root font-size at every
+// breakpoint, same as a plain <p> in .page__content.
+.feature__wrapper .archive__item-excerpt {
+  font-size: 0.8889em;
 }
 
 // Alumni gallery: match the orange link color used by Current Members' names
@@ -153,5 +593,27 @@ $primary-color: #3e3d4e !default;
     content: "";
     display: table;
     clear: both;
+  }
+}
+
+// The theme's gallery include (used on the Research page) sizes each image
+// as a PERCENTAGE of its container (figure.half -> 50% each) rather than a
+// fixed pixel size, unlike the other diagrams on that page, which are plain
+// img tags naturally capped at their own source resolution (e.g. ~900px).
+// Since .page__content now spans the full viewport width (see the #main
+// override above), that 50% rule let the two Cuscuta photos balloon to
+// ~1000px each on wide screens -- far larger than every other image on the
+// page. Cap them to a comparable size instead.
+.page__content figure.half {
+  // The theme's base figure rule uses justify-content: space-between,
+  // which (now that each image is capped well under its 50% slot) pushes
+  // the two images apart to the container's far edges instead of packing
+  // them together -- hence the wide gap between them. Center them instead.
+  justify-content: center;
+  gap: 1em;
+
+  > a,
+  > img {
+    max-width: 450px;
   }
 }

@@ -25,12 +25,14 @@ School of Biosciences, University of Sheffield
 Office: C62, Alfred Denny Building   
 Lab: C45, Alfred Denny Building
 
-[Saima's CV]({{ site.url }}{{ site.baseurl }}/assets/CV_Saima_Shahid_2026.pdf)  <a href="http://scholar.google.com/citations?user=lez4bcIAAAAJ&hl=en" itemprop="sameAs" rel="nofollow noopener noreferrer">
+[Saima's CV]({{ site.url }}{{ site.baseurl }}/assets/CV_Saima_Shahid_2026.pdf)  <a title='Email' href="mailto:saima.shahid@okstate.edu">
+  <i class="fas fa-envelope fa-fw" style="color:#000000"></i></a>
+<a href="http://scholar.google.com/citations?user=lez4bcIAAAAJ&hl=en" itemprop="sameAs" rel="nofollow noopener noreferrer">
   <i class="fab fa-google" aria-hidden="true" style="color:#4c8bf5"> </i></a>
 <a href="https://orcid.org/0000-0001-9385-0925" itemprop="sameAs" rel="nofollow noopener noreferrer">
   <i class="fas fa-info-circle" aria-hidden="true" style="color:#ABC953"></i></a>
-<a title='Email' href="mailto:saima.shahid@okstate.edu">
-  <i class="fas fa-envelope fa-fw" style="color:#000000"></i></a>
+<a title="LinkedIn" href="https://www.linkedin.com/in/saima-shahid" itemprop="sameAs" rel="nofollow noopener noreferrer">
+  <i class="fab fa-fw fa-linkedin" style="color:#0077B5"></i></a>
 <a title="Twitter" href="https://twitter.com/psaima">
   <i class="fab fa-fw fa-twitter" style="color:#00acee"></i></a>  
 </div>

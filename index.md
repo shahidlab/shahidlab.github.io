@@ -7,11 +7,18 @@ header:
 feature_row:
   - image_path: /assets/images/spring-2022.jpg
     alt: "lab photo"
-    title: "Welcome to the Shahid Lab @ University of Sheffield"
-    excerpt: "We study interspecies RNA communication and epigenetic memory in parasitic plants and beyond. Our goal is to further the fundamental understanding of how mobile small RNAs influence host-parasite/symbiont interactions, and develop RNA-based solutions for improved parasite resistance in crops. See our [research](/research/) and [publications](/publications/) to learn more about what we do, and meet [lab members](/team/)!
-
-
-    We are located in the Alfred Denny building at the [University of Sheffield](https://www.sheffield.ac.uk/). We are members of the [Plants, Photosynthesis and Soil Cluster](https://www.sheffield.ac.uk/biosciences/research/areas/plants-photosynthesis-and-soil) and the [Sheffield Institute for Nucleic Acids](https://sites.google.com/sheffield.ac.uk/sinfonia/home?pli=1). Feel free to reach out if you are interested in [joining the lab](/join/) or collaborating on research projects."
+    title: "How do plants communicate with other organisms?"
+    excerpt: "We investigate how mobile small RNAs and epigenetic memory shape plant responses during interspecies interactions. By uncovering the molecular messages underlying these interactions, we aim to reveal new principles of plant defence, develop RNA-based approaches to protect crops from parasitic plants, and enhance beneficial interactions with symbionts."
+    btns:
+      - url: /research/
+        label: "Explore our research"
+        class: "btn--brand-blue"
+      - url: /team/
+        label: "Meet the lab members"
+        class: "btn--brand-green"
+      - url: /join/
+        label: "Join us"
+        class: "btn--brand-yellow"
 ---
 # THE SHAHID LAB
 {: style="text-align: center;
