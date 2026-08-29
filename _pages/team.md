@@ -16,7 +16,7 @@ author_profile: false
 
 <div class="clearfix-block" markdown="1">
 ![Dr Saima Shahid]({{ site.url }}{{ site.baseurl }}/assets/images/saima-shahid.jpg){: .align-left .pi-photo}  
-### [**Dr Saima Shahid**](https://www.sheffield.ac.uk/biosciences/people/saima-shahid)
+### [Dr Saima Shahid](https://www.sheffield.ac.uk/biosciences/people/saima-shahid)
 
 [Lecturer | Plants, Photosynthesis and Soil Cluster](https://sheffield.ac.uk/biosciences/research/clusters/plants-photosynthesis-and-soil/pps-members)   
 School of Biosciences, University of Sheffield  
