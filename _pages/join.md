@@ -13,8 +13,7 @@ gallery:
     alt: ""        
 ---
 
-We welcome curious researchers interested in interspecies RNA interference, epigenetics, plant–biotic interactions, and biology of complex interacting genome. Our work combines experimental and computational approaches to understand host-parasitic plant interactions and how these discoveries could contribute to more resilient crops.
-Whether you are looking for a PhD project, developing a fellowship, interested in visiting the lab or exploring a collaboration, we'd be happy to hear from you.
+We are always interested in researchers who are curious and excited by interdisciplinary science in interspecies RNA interference, epigenetics, plant–biotic interactions, and biology of complex interacting genomes. Whether you are looking for a PhD project, developing a fellowship, interested in visiting the lab or exploring a collaboration, we'd be happy to hear from you.
 
 <nav class="join-nav" markdown="0">
   <a href="#phd" class="btn btn--brand-blue">PhD</a>
@@ -26,7 +25,7 @@ Whether you are looking for a PhD project, developing a fellowship, interested i
 ## PhD Opportunities
 {: #phd}
 
-We welcome enquiries from prospective students interested in developing a project with us, as well as applications to advertised funded studentships. Feel free to [contact Dr. Shahid](mailto:saima.shahid@sheffield.ac.uk) to discuss potential projects.  
+We welcome enquiries from prospective students interested in developing a project with us, as well as applications to advertised funded studentships. You do not need previous experience in every technique used in the lab. We welcome applicants from experimental, computational and quantitative backgrounds who are interested in learning across disciplines. If you are excited by our research but unsure whether your current experience is an exact match, we still encourage you to get in touch.
 
 <a href="https://sheffield.ac.uk/postgraduate/phd" target="_blank" rel="noopener noreferrer" class="btn btn--external">Current PhD Opportunities <i class="fas fa-external-link-alt" aria-hidden="true"></i><span class="visually-hidden"> (opens in new tab)</span></a>
 <a href="https://sheffield.ac.uk/postgraduate/phd/scholarships" target="_blank" rel="noopener noreferrer" class="btn btn--external">PhD funding at Sheffield <i class="fas fa-external-link-alt" aria-hidden="true"></i><span class="visually-hidden"> (opens in new tab)</span></a>

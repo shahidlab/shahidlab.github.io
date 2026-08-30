@@ -1,0 +1,38 @@
+{% comment %}
+Single publication entry: image + title + authors + journal/DOI/badges row.
+Shared by publication-list.html (grouped by year) and featured-publications.html
+(the curated "Selected Publications" set) so both use the exact same card
+design. Usage: {% include publication-entry.html pub=pub %}
+{% endcomment %}
+{% assign pub = include.pub %}
+<div class="publication-card__entry">
+  <div class="publication-card__image">
+    <a href="{{ pub.link }}" target="_blank" rel="noopener noreferrer">
+      <img src="{{ pub.image | relative_url }}" alt="Thumbnail for &quot;{{ pub.title | markdownify | strip_html }}&quot;">
+    </a>
+  </div>
+  <div class="publication-card__body">
+    <h3 class="publication-card__title">
+      <a href="{{ pub.link }}" target="_blank" rel="noopener noreferrer">{{ pub.title | markdownify | remove: "<p>" | remove: "</p>" | strip }}</a>
+    </h3>
+    <p class="publication-card__authors">{{ pub.authors | markdownify | remove: "<p>" | remove: "</p>" | strip }}{% if pub.note %} <span class="publication-card__note">{{ pub.note }}</span>{% endif %}</p>
+    <div class="publication-card__meta-row">
+      <p class="publication-card__citation"><em>{{ pub.journal }}</em></p>
+      <p class="publication-card__actions">
+        <a href="{{ pub.link }}" target="_blank" rel="noopener noreferrer" class="publication-card__doi-btn">DOI</a>
+        <span class="altmetric-embed" data-badge-type="donut" data-hide-no-mentions="true" data-doi="{{ pub.link | split: "doi.org/" | last }}"></span>
+        <span class="__dimensions_badge_embed__" data-doi="{{ pub.link | split: "doi.org/" | last }}" data-style="small_circle" data-hide-zero-citations="true"></span>
+      </p>
+    </div>
+  </div>
+  {% if pub.highlighted_in %}
+    <div class="publication-card__highlighted">
+      <p class="publication-card__highlighted-label">Highlighted in</p>
+      <p class="publication-card__highlighted-links">
+        {% for h in pub.highlighted_in %}
+          <a href="{{ h.url }}" target="_blank" rel="noopener noreferrer" class="btn btn--external" title="{{ h.text }}">{{ h.source }} <i class="fas fa-external-link-alt" aria-hidden="true"></i><span class="visually-hidden"> (opens in new tab)</span></a>
+        {% endfor %}
+      </p>
+    </div>
+  {% endif %}
+</div>

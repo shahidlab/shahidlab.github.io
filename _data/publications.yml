@@ -2,7 +2,12 @@
 # _includes/publication-list.html. Newest first.
 #
 # Fields: image, journal, year, title, authors, link (required);
-# highlighted_in (optional list of {text, source, url}); note (optional, e.g. equal contribution).
+# highlighted_in (optional list of {text, source, url}); note (optional, e.g. equal contribution);
+# featured (optional, true to include in the "Selected Publications" section);
+# featured_order (required if featured -- controls display order there, 1 first;
+# unrelated to the by-year list below, which always shows newest first);
+# snippet (required if featured -- one-line plain-English summary shown in the
+# highlighted callout box on the Selected Publications card).
 
 - image: /assets/pubs/2025_mir.jpg
   journal: "PLoS Computational Biology"
@@ -27,6 +32,9 @@
   authors: "Liu P, Cuerda-Gil D, **Shahid S**, Slotkin RK"
   citation: ""
   link: https://doi.org/10.1146/annurev-genet-072920-015534
+  featured: true
+  featured_order: 4
+  snippet: "A comprehensive framework for how epigenetic mechanisms govern transposons and genome stability."
 
 - image: /assets/pubs/2020_long_reads.png
   journal: "Current Opinion in Plant Biology"
@@ -51,6 +59,9 @@
   authors: "Yang Z, Wafula EK, Kim G, **Shahid S**, McNeal JR, Ralph PE, Timilsena PR, Yu WB, Kelly EA, Zhang H, Person TN"
   citation: "5(9), 991-1001"
   link: https://doi.org/10.1038/s41477-019-0458-0
+  featured: true
+  featured_order: 2
+  snippet: "Demonstrates exchange and cross-talk of mobile DNAs/RNAs driving adaptation in parasitic plants."
 
 - image: /assets/pubs/2019_ALY1.png
   journal: "The Plant Cell"
@@ -59,6 +70,9 @@
   authors: "Choudury S, **Shahid S**, Cuerda-Gil D, Panda K, Cullen A, Ashraf QUA, Sigman MJ, McCue AD, Slotkin RK"
   citation: "31(4), 759-774"
   link: http://dx.doi.org/10.1105/tpc.18.00624
+  featured: true
+  featured_order: 3
+  snippet: "Identifies ALY1 as a key connector of RNA export and epigenetic silencing across the genome."
 
 - image: /assets/pubs/2018_cuscuta.png
   journal: "Nature"
@@ -67,6 +81,9 @@
   authors: "**Shahid S**, Kim G, Johnson NR, Wafula EK, Wang F, Coruh C, Bernal-Galeano V, Phifer T, dePamphilis CW, Westwood JH and Axtell MJ"
   citation: "553, 82-85"
   link: http://dx.doi.org/10.1038/nature25027
+  featured: true
+  featured_order: 1
+  snippet: "Reveals that a parasitic plant exports microRNAs that reprogram host gene expression."
   highlighted_in:
     - source: "NCRI"
       text: "German Martinez, Kirsten Krause"

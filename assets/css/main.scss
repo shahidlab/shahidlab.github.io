@@ -116,30 +116,45 @@ $brand-teal: color.mix(#099fcc, $muted-text-color, 65%);
   }
 }
 
-// Publications: image + details card per entry (see _includes/publication-list.html).
-// Image uses a fixed frame with object-fit: contain rather than cropping --
-// these are paper screenshots of arbitrary aspect ratio, so cropping (as used
-// for photo teasers elsewhere) could cut off actual figure content.
-.publication-list {
+// Publications: each entry is its own card (see _includes/publication-list.html),
+// laid out in a two-column grid. Image uses a fixed frame with object-fit:
+// contain rather than cropping -- these are paper screenshots of arbitrary
+// aspect ratio, so cropping (as used for photo teasers elsewhere) could cut
+// off actual figure content.
+// The theme's own $border-radius (4px) is quite subtle -- publication cards
+// use a softer, more visible rounding instead.
+$pub-card-radius: 14px;
+
+.publications-grid {
   display: flex;
   flex-direction: column;
-  gap: 0.75em;
+  gap: 1.25em;
 }
 
-// One card per year, containing one or more stacked .publication-card__entry
-// rows (see _includes/publication-list.html, which groups site.data.publications
-// by year).
+// Year sits as its own column to the left of the thumbnail (see
+// .publication-card__year-badge below) rather than as a heading above the
+// entry, so the card itself needs to be a row, not just a padded box.
 .publication-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1em;
   padding: 0.75em 1.25em;
   background-color: #f8f8f8; // slightly lighter than the page background (#eee) for subtle card contrast
-  border-radius: $border-radius;
+  border-radius: $pub-card-radius;
 }
 
-.publication-card__year-heading {
-  margin: 0.25em 0 0.5em;
-  text-align: center;
-  font-size: 20px;
-  color: $primary-color;
+// Small muted label at the top of each All Publications card, replacing the
+// old shared "one card per year" heading now that every entry has its own
+// card. Sits as its own fixed-width column to the left of the thumbnail
+// (the card itself is a flex row -- see .publication-card above) rather
+// than as a heading above the entry.
+.publication-card__year-badge {
+  flex: 0 0 60px; // widened from 45px -- 22px text needs more room than the old small bold label did
+  margin: 0;
+  padding-top: 0.2em; // nudge down to align with the image top, not the card's own top edge
+  font-size: 22px; // matches .publication-card__title (see the em-context note there)
+  font-weight: normal;
+  color: $muted-text-color;
 }
 
 .publication-card__entry {
@@ -147,30 +162,24 @@ $brand-teal: color.mix(#099fcc, $muted-text-color, 65%);
   flex-wrap: wrap;
   align-items: flex-start; // image top aligns with the title row, regardless of which column ends up taller
   gap: 1.25em;
-  padding: 0.75em 0;
-  // Full page-width card (no max-width) -- the image below is sized to
-  // roughly match the text block's height instead, so the card doesn't
-  // gain excess empty space just because it spans the full row.
-
-  // Separator between multiple entries stacked in the same year's card.
-  & + & {
-    border-top: 1px solid $border-color;
-  }
+  flex: 1 1 auto;
+  min-width: 0;
 }
 
 .publication-card__image {
   flex: 0 0 auto;
-  // Portrait "letter page" proportions (matches US Letter's 8.5:11 ratio)
-  // rather than a square, since these thumbnails are screenshots/figures
-  // from journal article pages. Sized to roughly match the text block's
-  // height rather than towering over a short 3-4 line entry.
-  width: 100px;
-  height: 129px;
+  // Square, not the earlier portrait "Letter" ratio -- the actual figures
+  // span everything from 0.66 to 1.59 (plus one extreme 4.15 outlier), with
+  // a median near 0.9, so no single ratio avoids letterboxing entirely; a
+  // square frame minimizes it on average across that spread and is the most
+  // symmetrical shape on its own.
+  width: 130px;
+  height: 130px;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: #fff;
-  border-radius: $border-radius;
+  border-radius: $pub-card-radius;
   overflow: hidden;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 
@@ -195,10 +204,15 @@ $brand-teal: color.mix(#099fcc, $muted-text-color, 65%);
   // that depends on ancestor context.
   font-size: 22px;
 
-  // .page__content a { text-decoration: none; } (above) already handles the
-  // underline-on-hover state site-wide; just set the color here.
+  // Semi-bold charcoal rather than full bold black or the site's usual
+  // orange hyperlink styling -- the larger font-size already signals
+  // "title", so full bold + near-black on top of that read as too heavy.
+  // .page__content a { text-decoration: none; } (above) still gives the
+  // underline-on-hover feedback that it's clickable.
+  font-weight: 600;
+
   a {
-    color: $link-color;
+    color: $primary-color;
   }
 }
 
@@ -206,15 +220,21 @@ $brand-teal: color.mix(#099fcc, $muted-text-color, 65%);
 // (not just their own class) so their specificity beats the theme's
 // ".page__content p { margin: 0 0 1.3em; }" reset, which otherwise wins the
 // cascade and forces its own much larger margin-bottom here.
+// Literal px (not relative em) for the same reason as .publication-card__title
+// above: these had no font-size of their own, just whatever fluid/relative
+// size cascaded down from ancestor context -- which grows with viewport
+// width, and could grow past the title's own size on a wide enough screen.
 .publication-card__body .publication-card__authors {
   margin-bottom: 0.15em;
   line-height: 1.4;
+  font-size: 16px;
   color: $muted-text-color;
 }
 
 .publication-card__body .publication-card__citation {
   margin-bottom: 0;
   line-height: 1.4;
+  font-size: 16px;
   color: $primary-color;
 }
 
@@ -357,15 +377,23 @@ $pub-action-size: 26px;
   margin-top: 0.5em;
   padding-top: 1em;
   border-top: 1px solid $border-color;
+}
 
-  ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
+// Side-by-side external-link buttons instead of a stacked list -- same
+// .btn--external style as the "Full list ... Google Scholar" link elsewhere
+// on this page, so a highlight is just its source name + icon, not a full
+// "source -- credited by" line, keeping several highlights compact in a row.
+// Qualified with the .publication-card__highlighted ancestor (not just its
+// own class) so its specificity beats the theme's
+// ".page__content p { margin: 0 0 1.3em; }" reset.
+.publication-card__highlighted .publication-card__highlighted-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  margin: 0;
 
-  li {
-    margin-bottom: 0.25em;
+  .btn {
+    margin-bottom: 0;
   }
 }
 
@@ -375,6 +403,38 @@ $pub-action-size: 26px;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: $muted-text-color;
+}
+
+// "Selected Publications" -- vertical cards (image on top) in a row, unlike
+// the horizontal image-left entries in the full by-year list below, so the
+// two sections read as visually distinct without needing a different color
+// scheme or the page's own background touched.
+.featured-publications-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25em;
+  // Without this, grid's default stretch makes every card as tall as the
+  // tallest one -- e.g. the one entry with a "Highlighted in" row -- leaving
+  // the others mostly empty at the bottom. Size each to its own content.
+  align-items: start;
+
+  @media (max-width: 700px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.featured-publication-card {
+  padding: 1em;
+  background-color: #f8f8f8;
+  border-radius: $pub-card-radius;
+}
+
+// Bigger than the base .publication-card__image (100x129) -- there are only
+// four of these cards, so the thumbnail can afford more visual weight than
+// the compact All Publications list below.
+.featured-publication-card__image {
+  width: 190px;
+  height: 190px;
 }
 
 // Join page: postdoctoral fellowship routes shown as a card grid (see
