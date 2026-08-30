@@ -7,7 +7,7 @@ header:
   overlay_image: /assets/images/ath3.jpg
   og_image: /assets/images/saima-shahid.jpg # social/search share image for this page -- her photo, not the banner
   og_image_alt: "Dr Saima Shahid, Principal Investigator, Shahid Lab, University of Sheffield"
-permalink : /team/
+permalink : /people/
 collection: people
 entries_layout: grid
 #classes: wide
