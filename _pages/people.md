@@ -1,7 +1,7 @@
 ---
 layout: single
 classes: wide
-title: Team
+title: People
 header:
   #overlay_color: "#111"
   overlay_image: /assets/images/ath3.jpg
