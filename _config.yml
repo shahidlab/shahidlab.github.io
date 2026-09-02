@@ -238,7 +238,7 @@ whitelist:
 # Collections
 collections:
   people:
-    output: true
+    output: false # no individual HTML pages built for Current Members. To restore hyperlinked names: set this true AND re-wrap the title in an <a href="{{ post.url }}"> in the people branch of _includes/people-single.html (removed when the "Read bio" toggle was added -- currently the name renders as plain text even with output: true)
     permalink: /:collection/:path/
   alum:
     output: false # no individual pages -- shown only as a gallery on the Team page

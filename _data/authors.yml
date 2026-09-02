@@ -86,7 +86,7 @@ Amna Dar:
   twitter:
 Megan Adler:
   name: Megan Adler
-  email: meadler@okstate.edu
+  email:
   bio: ""
   bio_long: ""
   avatar: /assets/images/MA.jpg
@@ -99,7 +99,7 @@ Megan Adler:
   twitter:
 Jackson Grimes:
   name: Jackson Grimes
-  email: jgrim11@okstate.edu
+  email: 
   bio: ""
   bio_long: ""
   avatar: /assets/images/ath_flower.jpg
@@ -112,7 +112,7 @@ Jackson Grimes:
   twitter:
 Jen Crooks:
   name: Jen Crooks
-  email: lcrooks1@sheffield.ac.uk
+  email:
   bio: ""
   bio_long: ""
   avatar: /assets/images/JC.jpg
@@ -125,7 +125,7 @@ Jen Crooks:
   twitter:
 Deiniol Owen:
   name: Deiniol Owen
-  email: dowen3@sheffield.ac.uk
+  email:
   bio: ""
   bio_long: ""
   avatar: /assets/images/DO.jpg
@@ -144,7 +144,7 @@ Amelia Lyons:
   avatar: /assets/images/ath_flower.jpg
   title:
   github:
-  linkedin:
+  linkedin: amelia-lyons-a66924307
   google:
     scholar:
   orc_id:

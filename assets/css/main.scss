@@ -4,7 +4,11 @@
 @charset "utf-8";
 @use "sass:color";
 
-$link-color:  #FF7300 !default;
+// Teal sampled from the header banner painting (assets/images/ath3.jpg) --
+// coincidentally matches the teal already sampled from the lab logo for the
+// homepage CTA buttons ($brand-teal, #099fcc below), reinforcing it as the
+// site's real accent color.
+$link-color:  #03a2ce !default;
 
 // Brand color override (theme default is #0092ca) -- must be set before the skin import
 $primary-color: #3e3d4e !default;
@@ -24,6 +28,46 @@ $background-color: #eef3f5 !default;
 
 .page__content a:hover {
   text-decoration: underline;
+}
+
+// Section headings (Research page's Interspecies RNAi/Epigenetic
+// memory/Genome plasticity, etc. -- all h2s) should always start on a fresh
+// line below any preceding .align-left/.align-right floated diagram.
+// Without this, at some viewport widths the floated image is taller than
+// the paragraph text wrapping beside it, so the next heading starts before
+// the float clears and gets squeezed into whatever narrow space is left
+// beside the image instead of running full width underneath it.
+// h3 only (not included here): the PI's own name ("### Dr Saima Shahid" on
+// the Team page) is an h3 that's deliberately positioned right after
+// .pi-photo so it wraps BESIDE the float, not below it -- clearing h3 broke
+// that layout.
+.page__content h2 {
+  clear: both;
+}
+
+// Match the header-overlay page titles (Research/News/People/Join, etc.) to
+// the homepage's own "THE SHAHID LAB" heading -- same font-size and
+// letter-spacing as that plain markdown <h1> (font-family/weight already
+// matched, both use the theme's default bold $header-font-family). Color is
+// intentionally left untouched (white + text-shadow, for contrast over the
+// overlay image) -- .page__hero--overlay .page__title is the exact selector
+// the theme itself uses (including its own $small-breakpoint bump), so this
+// needs to repeat it for equal specificity to win at every viewport width.
+// text-transform: uppercase gives the ON-PAGE caps look without the
+// underlying `title:` front matter needing to be typed in caps -- that field
+// also feeds the <title> tag/SEO meta, browser tab and search snippets,
+// which should read as normal sentence case ("Research", not "RESEARCH").
+// The homepage's own "# THE SHAHID LAB" is a plain markdown H1, not driven
+// by page.title, so it's unaffected by this and stays literally typed in
+// caps as before.
+.page__hero--overlay .page__title {
+  font-size: $h-size-1;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+
+  @include breakpoint($small) {
+    font-size: $h-size-1;
+  }
 }
 
 // Hide permalink buttons beside header text
@@ -151,8 +195,13 @@ $pub-card-radius: 14px;
 .publication-card__year-badge {
   flex: 0 0 60px; // widened from 45px -- 22px text needs more room than the old small bold label did
   margin: 0;
-  padding-top: 0.2em; // nudge down to align with the image top, not the card's own top edge
   font-size: 22px; // matches .publication-card__title (see the em-context note there)
+  // Matches .publication-card__title's line-height too -- both boxes start
+  // flush at the same top (siblings under the same align-items: flex-start
+  // row), so an identical line-height is what keeps their text vertically
+  // centered on each other; the browser's own default line-height here was
+  // taller than the title's 1.25, throwing the two a couple px out of line.
+  line-height: 1.25;
   font-weight: normal;
   color: $muted-text-color;
 }
@@ -449,7 +498,7 @@ $pub-action-size: 26px;
 .fellowship-card {
   padding: 1.25em;
   background-color: #f8f8f8;
-  border-radius: $border-radius;
+  border-radius: $pub-card-radius; // same rounding as the Publications page cards
 
   h4 {
     margin: 0 0 0.4em;
@@ -574,6 +623,13 @@ $pub-action-size: 26px;
   border-bottom: none;
 }
 
+// The theme gives every .feature__wrapper (both homepage rows) a default
+// divider line along its bottom edge; the site's cleaner, borderless card
+// look elsewhere doesn't use dividers like this, so drop it here too.
+.feature__wrapper {
+  border-bottom: none;
+}
+
 // The theme sets feature-row excerpt text at $type-size-6 (0.75em), which
 // compounds with .feature__item's own 1.125em ancestor context to render
 // noticeably smaller than plain body copy elsewhere on the site (13.5px vs
@@ -586,11 +642,113 @@ $pub-action-size: 26px;
   font-size: 0.8889em;
 }
 
-// Alumni gallery: match the orange link color used by Current Members' names
-// (those are real links; alumni names aren't, since there's no individual
-// page to link to). Font size/spacing already match via .grid__item.
+// Homepage "Our Research Themes" row (feature_row2, no include.type so the
+// theme renders plain .feature__item -- distinct from the hero row above,
+// which renders .feature__item--left and is untouched by this rule). Card
+// styling matches the rounded/shadowed look used by publication and
+// fellowship cards elsewhere on the site.
+.feature__item .archive__item {
+  position: relative; // containing block for the stretched-link ::after below
+  height: 100%;
+  padding: 1em;
+  background-color: #f8f8f8;
+  border-radius: $pub-card-radius;
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+
+  &:hover {
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
+  }
+}
+
+// "Stretched link": the whole card is clickable (like sauvageaulab.ca's
+// research cards) via a transparent overlay on the existing "Learn more"
+// link's ::after, absolutely positioned against .archive__item above --
+// rather than wrapping the whole card in a second <a>, which would nest
+// links and break the button's own hover style.
+// The theme's own .archive__item a { position: relative; } (_archive.scss)
+// would otherwise make the button itself the ::after's containing block,
+// shrinking the overlay down to just the button -- reset it to static here
+// so .archive__item (above) is the containing block instead.
+// The shared ".page__content .btn--external { font-size: 0.84375em; }" rule
+// above resolves relative to each button's own ancestor chain, not root --
+// here that chain already includes .feature__item's 1.125em multiplier, so
+// the same 0.84375em coefficient renders 1.125x larger than "All research
+// areas" (which sits directly in .page__content with no such multiplier).
+// Cancel it the same way the excerpt text above does (0.84375 / 1.125 = 0.75)
+// so both buttons render at an identical size.
+.feature__item .btn--external {
+  font-size: 0.75em;
+}
+
+.feature__item .archive__item-body .btn {
+  position: static;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+}
+
+// Colored the same as Current Members/Alumni names for a consistent "this is
+// a link" signal across the site. rem (not em) so the size is fixed
+// regardless of .feature__item's own 1.125em font-size context -- the theme
+// leaves .archive__item-title with no explicit size of its own, so without
+// this it inherits a large default.
+.feature__item .archive__item-title {
+  color: $link-color;
+  margin-bottom: 0.5em;
+  font-size: 1.1rem;
+}
+
+// Scoped to .feature__item specifically (not the shared .feature__wrapper
+// rule above, which also covers the hero row's .feature__item--left and is
+// deliberately kept at 1x root size) -- same $type-size-6 token used for
+// excerpt/bio text on the People page, to match that smaller look here.
+.feature__item .archive__item-excerpt {
+  font-size: $type-size-6;
+}
+
+.feature__item .archive__item-teaser {
+  overflow: hidden;
+  background-color: #fff;
+  border-radius: $pub-card-radius;
+  margin-bottom: 1em; // the theme's own default (.25em) reads as cramped next to the title/excerpt/button gaps below it, which run ~1.3em
+
+  img {
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+  }
+}
+
+// Current Members and Alumni names share the same colored-heading style
+// even though neither is a real link (Current Members use a "Read bio"
+// toggle instead of a separate page; Alumni have no individual page at
+// all). Also applied directly to the PI's own name on the Team page (a
+// plain markdown heading, not a grid card) via {: .person-card__name} in
+// _pages/people.md, so all three read as one consistent name style.
+// Literal px, not left to inherit -- .grid__item's own ambient font-size
+// context happens to already resolve to 22px for Current Members/Alumni,
+// but the PI heading sits directly in .page__content with no such
+// multiplier and would otherwise render larger.
+.person-card__name,
 .alumni-gallery__name {
   color: $link-color;
+  font-size: 22px;
+}
+
+// Alumni cards' jobtitle/school lines are plain .archive__item-excerpt <p>
+// tags, so they hit the same ".page__content p { margin: 0 0 1.3em; }"
+// specificity bug fixed above for Current Members -- qualify with
+// .alumni-gallery to win.
+.alumni-gallery .archive__item-excerpt {
+  margin-bottom: 0.15em;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
 }
 
 // Grid teaser photos (News, Current Members, Alumni -- all use this class via
@@ -610,15 +768,97 @@ $pub-action-size: 26px;
   }
 }
 
-// Principal Investigator photo: plain markdown image (not a grid card), so it
-// otherwise renders at full natural size (was 1236px vs. 293px for lab
-// members' teaser photos). Match the same square-crop treatment/scale.
+// Current Members: icon links (email, LinkedIn, etc.) after the job title --
+// same icon-only style as the PI's own links in _pages/people.md, driven by
+// site.data.authors[post.author] (see people-single.html) so adding another
+// icon for someone is just filling in a field in _data/authors.yml, not a
+// template change.
+// Selectors below are qualified with .archive__item (not just the bare
+// class) so their specificity beats the theme's ".page__content p {
+// margin: 0 0 1.3em; }", which otherwise silently overrides these tighter
+// margins since both .person-card__jobtitle and .person-card__links render
+// as <p> tags inside .page__content.
+.archive__item .person-card__jobtitle {
+  margin-bottom: 0.15em;
+}
+
+// Email/social icons and the "Read bio" toggle share one row instead of
+// stacking on their own lines, so a card with both doesn't need an extra
+// row just for the toggle.
+.archive__item .person-card__meta-row {
+  display: flex;
+  align-items: baseline; // matches the PI's plain-inline-text "Saima's CV" + icons row (_pages/people.md), which relies on ordinary text-baseline alignment
+  flex-wrap: wrap;
+  gap: 0.75em;
+  margin: 0.15em 0 0.35em;
+}
+
+.person-card__meta-row .person-card__links {
+  margin: 0;
+
+  a {
+    display: inline-block;
+    margin-inline-end: 0.5em;
+    font-size: $type-size-5;
+  }
+}
+
+// Current Members: "Read bio" click-to-expand instead of the card linking
+// through to a separate page (see people-single.html) -- a native <details>
+// element, so this needs no JS and is keyboard/screen-reader accessible by
+// default, and works identically on touch devices (no separate hover
+// fallback needed, unlike a hover-reveal panel).
+.person-card__meta-row .person-card__bio-toggle {
+  margin-top: 0;
+
+  summary {
+    cursor: pointer;
+    font-size: $type-size-6;
+    font-weight: bold;
+    color: $link-color;
+    list-style: none; // hide the default marker so we can draw our own consistent one below
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    &::after {
+      content: " \25BE"; // ▾
+    }
+  }
+
+  &[open] summary::after {
+    content: " \25B4"; // ▴
+  }
+
+  p {
+    margin: 0.5em 0 0;
+    font-size: $type-size-6;
+    color: $muted-text-color;
+  }
+}
+
+// Principal Investigator photo: plain markdown image (not a grid card), so
+// it otherwise renders at full natural size. Match the same square-crop
+// treatment/scale as lab members' teaser photos -- 293px was a one-off
+// snapshot at a single viewport width; the teaser photos are actually a
+// constant ~23.73% of their container at every width (measured against
+// .archive__item-teaser-person img), so match that as a percentage instead
+// of a fixed px, or the two only coincidentally lined up at one size.
 .pi-photo {
-  width: 293px;
-  max-width: 45%;
+  width: 23.73%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: $border-radius;
+
+  // The theme's own .align-left only floats at $small (600px) and up --
+  // below that it's a stacked, full-width block, which is why the photo
+  // grows to fill a narrow window and the bio text drops beneath it. Float
+  // unconditionally here so the photo+text layout stays side by side at
+  // every width; max-width: 45% above already keeps the photo from
+  // crowding out the text on a truly narrow (phone-width) screen.
+  float: left;
+  margin-right: 1em;
 }
 
 // .entries-grid holds floated .grid__item cards (Current Members, Alumni,
@@ -664,6 +904,11 @@ $pub-action-size: 26px;
 // override above), that 50% rule let the two Cuscuta photos balloon to
 // ~1000px each on wide screens -- far larger than every other image on the
 // page. Cap them to a comparable size instead.
+// Used by figure.half galleries in News posts (a single photo, or two side
+// by side) -- the Research page stopped using this (it now embeds a plain
+// .align-right image instead, like its other diagrams), so this no longer
+// needs the float/single-column treatment that page briefly had; keep it a
+// simple centered row so News posts aren't affected by Research-only sizing.
 .page__content figure.half {
   // The theme's base figure rule uses justify-content: space-between,
   // which (now that each image is capped well under its 50% slot) pushes
@@ -674,6 +919,6 @@ $pub-action-size: 26px;
 
   > a,
   > img {
-    max-width: 450px;
+    max-width: 600px;
   }
 }

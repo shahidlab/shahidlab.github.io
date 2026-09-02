@@ -8,5 +8,5 @@ show_date: false
 Many Congratulations to all the MS graduates - Megan Adler (OSU), Jen Crooks (UoS) & Deiniol Owen (UoS).
 
 <figure class="half">
-    <a href="/assets/images/Botany2025.jpg"><img src="/assets/images/MAOSU26.jpg" alt="Shahid Lab members graduate"></a>
+    <a href="/assets/images/MAOSU26.jpg"><img src="/assets/images/MAOSU26.jpg" alt="Shahid Lab members graduate"></a>
 </figure>

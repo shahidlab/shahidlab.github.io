@@ -4,6 +4,13 @@ mjk: derived from archive-single.html that changes:
   <div class="archive__item-teaser-person">
   <h2 class="archive__item-title" itemprop="name">
   Plus a jobtitle/description section at bottom
+
+Shared by the Team page's Current Members grid (site.people), Alumni grid
+(site.alum, via alumni-gallery.html), and the News grid (site.news, via
+people-list.html). Current members and alumni get a click-to-expand "Read
+bio" toggle and email/social icons instead of linking to a separate page
+(post.collection == "people" or "alum" -- news entries still link through to
+their own full article).
 {% endcomment %}
 
 {% if post.header.teaser %}
@@ -31,28 +38,83 @@ mjk: derived from archive-single.html that changes:
           alt="">
       </div>
     {% endif %}
-    <h2 class="archive__item-title" itemprop="name">
-      {% if post.link %}
-        <a href="{{ post.link }}">{{ title }}</a> <a href="{{ post.url | relative_url }}" rel="permalink"><i class="fas fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
-      {% else %}
-        <a href="{{ post.url | relative_url }}" rel="permalink">{{ title }}</a>
+
+    {% if post.collection == "people" or post.collection == "alum" %}
+      <h2 class="archive__item-title person-card__name" itemprop="name">{{ title }}</h2>
+      {% if post.jobtitle %}
+        <p class="archive__item-excerpt person-card__jobtitle"><strong><span itemprop="jobTitle">{{ post.jobtitle | markdownify | strip_html }}</span></strong></p>
       {% endif %}
-    </h2>
-    {% if post.read_time %}
-      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> {% include read-time.html %}</p>
-    {% endif %}
-    <p class="archive__item-excerpt">
-    {% if post.jobtitle %}
-      <strong><span itemprop="jobTitle">{{ post.jobtitle | markdownify | strip_html }}</span></strong>
-    {% endif %}
-    {% if post.bio %}
-      // <span itemprop="description">{{ post.bio | markdownify | strip_html }}</span>
-    {% endif %}
-    </p>
-    {% if post.excerpt.size > 0 %}
+      {% if post.excerpt and post.excerpt.size > 0 %}
+        <p class="archive__item-excerpt">&mdash; <em>{{ post.excerpt | markdownify | strip_html }}</em></p>
+      {% endif %}
+      {% assign author = site.data.authors[post.author] %}
+      {% assign has_links = false %}
+      {% if author.email or author.google.scholar or author.orc_id or author.linkedin or author.twitter or author.github or author.links %}
+        {% assign has_links = true %}
+      {% endif %}
+      {% if has_links or post.bio %}
+      <div class="person-card__meta-row">
+      {% endif %}
+      {% if post.bio %}
+        <details class="person-card__bio-toggle">
+          <summary>Read bio</summary>
+          <p itemprop="description">{{ post.bio | markdownify | strip_html }}</p>
+        </details>
+      {% endif %}
+      {% if has_links %}
+        <p class="person-card__links">
+          {% if author.email %}
+            <a href="mailto:{{ author.email }}" title="Email"><i class="fas fa-envelope fa-fw" aria-hidden="true" style="color:#000000"></i><span class="visually-hidden">Email</span></a>
+          {% endif %}
+          {% if author.google.scholar %}
+            <a href="https://scholar.google.com/citations?user={{ author.google.scholar }}&amp;hl=en" title="Google Scholar" itemprop="sameAs" rel="nofollow noopener noreferrer"><i class="fab fa-google" aria-hidden="true" style="color:#4c8bf5"></i><span class="visually-hidden">Google Scholar</span></a>
+          {% endif %}
+          {% if author.orc_id %}
+            <a href="https://orcid.org/{{ author.orc_id }}" title="ORCID" itemprop="sameAs" rel="nofollow noopener noreferrer"><i class="fas fa-info-circle" aria-hidden="true" style="color:#ABC953"></i><span class="visually-hidden">ORCID</span></a>
+          {% endif %}
+          {% if author.linkedin %}
+            <a href="https://www.linkedin.com/in/{{ author.linkedin }}" title="LinkedIn" itemprop="sameAs" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-linkedin" aria-hidden="true" style="color:#0077B5"></i><span class="visually-hidden">LinkedIn</span></a>
+          {% endif %}
+          {% if author.twitter %}
+            <a href="https://twitter.com/{{ author.twitter }}" title="Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true" style="color:#00acee"></i><span class="visually-hidden">Twitter</span></a>
+          {% endif %}
+          {% if author.github %}
+            <a href="https://github.com/{{ author.github }}" title="GitHub" itemprop="sameAs" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true" style="color:#333"></i><span class="visually-hidden">GitHub</span></a>
+          {% endif %}
+          {% if author.links %}
+            {% for link in author.links %}
+              <a href="{{ link.url }}" title="{{ link.label }}" itemprop="sameAs" rel="noopener noreferrer"><i class="{{ link.icon }}" aria-hidden="true" style="color:{{ link.color | default: 'inherit' }}"></i><span class="visually-hidden">{{ link.label }}</span></a>
+            {% endfor %}
+          {% endif %}
+        </p>
+      {% endif %}
+      {% if has_links or post.bio %}
+      </div>
+      {% endif %}
+    {% else %}
+      <h2 class="archive__item-title" itemprop="name">
+        {% if post.link %}
+          <a href="{{ post.link }}">{{ title }}</a> <a href="{{ post.url | relative_url }}" rel="permalink"><i class="fas fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
+        {% else %}
+          <a href="{{ post.url | relative_url }}" rel="permalink">{{ title }}</a>
+        {% endif %}
+      </h2>
+      {% if post.read_time %}
+        <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> {% include read-time.html %}</p>
+      {% endif %}
       <p class="archive__item-excerpt">
-      &mdash; <span itemprop="description"><em>{{ post.excerpt | markdownify | strip_html | truncate: 56 }}</em></span>
+      {% if post.jobtitle %}
+        <strong><span itemprop="jobTitle">{{ post.jobtitle | markdownify | strip_html }}</span></strong>
+      {% endif %}
+      {% if post.bio %}
+        // <span itemprop="description">{{ post.bio | markdownify | strip_html }}</span>
+      {% endif %}
       </p>
+      {% if post.excerpt.size > 0 %}
+        <p class="archive__item-excerpt">
+        &mdash; <span itemprop="description"><em>{{ post.excerpt | markdownify | strip_html | truncate: 56 }}</em></span>
+        </p>
+      {% endif %}
     {% endif %}
   </article>
 </div>

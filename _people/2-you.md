@@ -3,7 +3,7 @@ layout: archive
 title: "YOU!"
 author: YOU
 jobtitle:
-bio:
+bio: "We are looking for students, research technicians, and postdocs to join the lab! If you are interested in our work, get in touch to discuss joining the lab."
 excerpt: ""
 author_profile: true
 header:

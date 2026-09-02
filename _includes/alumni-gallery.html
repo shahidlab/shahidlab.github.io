@@ -1,39 +1,15 @@
 {% comment %}
-Alumni gallery: photo + name + excerpt, no linked individual page.
-Uses the same .grid__item/.archive__item markup as the Current Members
-grid (see _includes/people-single.html) so spacing/sizing match exactly,
-driven by a collection (include.entries) instead of a static list.
-Ordered by each alum's `sort_order` front matter field (format: YYYYMM,
-e.g. 202309 for September 2023), most recent first. Year-first digit order
-matters -- it's what makes plain numeric sort work correctly across years.
+Alumni gallery: delegates each entry to people-single.html (same as
+Current Members' people-list.html), so alumni get the identical card markup
+-- photo, name, jobtitle, "Read bio" toggle, email/social icons -- driven by
+site.data.authors[post.author] just like Current Members. The only thing
+alumni-gallery.html still does on its own is the sort: alumni order by
+`sort_order` (format YYYYMM, e.g. 202309), most recent first, which
+people-list.html's sort_by ('title'/'date' only) doesn't support.
 {% endcomment %}
 {% assign sorted_entries = include.entries | sort: 'sort_order' | reverse %}
 <div class="entries-grid alumni-gallery">
-  {% for alum in sorted_entries %}
-    {% if alum.header.teaser %}
-      {% capture teaser %}{{ alum.header.teaser }}{% endcapture %}
-    {% else %}
-      {% assign teaser = site.teaser %}
-    {% endif %}
-    <div class="grid__item">
-      <article class="archive__item">
-        {% if teaser %}
-          <div class="archive__item-teaser-person">
-            <img src="{{ teaser | relative_url }}" alt="{{ alum.title | escape_once }}">
-          </div>
-        {% endif %}
-        <h2 class="archive__item-title alumni-gallery__name">{{ alum.title }}</h2>
-        {% if alum.jobtitle %}
-          <p class="archive__item-excerpt">
-            <strong>{{ alum.jobtitle | markdownify | strip_html }}</strong>
-          </p>
-        {% endif %}
-        {% if alum.excerpt and alum.excerpt.size > 0 %}
-          <p class="archive__item-excerpt">
-            &mdash; <em>{{ alum.excerpt | markdownify | strip_html }}</em>
-          </p>
-        {% endif %}
-      </article>
-    </div>
+  {% for post in sorted_entries %}
+    {% include people-single.html type="grid" %}
   {% endfor %}
 </div>

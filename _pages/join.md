@@ -35,7 +35,7 @@ We welcome enquiries from prospective students interested in developing a projec
 
 Postdoctoral researchers interested in joining the Shahid Lab are encouraged to contact [Dr. Shahid](mailto:saima.shahid@sheffield.ac.uk) to discuss independent fellowship funding opportunities. If there is a strong scientific fit, we can work with prospective fellows to develop the research question, identify appropriate schemes and connect the project with relevant expertise across Sheffield.
 
-### Postdoctoral fellowships
+### Postdoctoral fellowship schemes
 
 <div class="fellowship-cards" markdown="1">
 <div class="fellowship-card" markdown="1">
