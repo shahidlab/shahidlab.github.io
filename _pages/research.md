@@ -45,8 +45,8 @@ Understanding these processes allows us to address a broader question: *how can 
 
 ## Epigenetic memory
 {: #memory}
-![Diagram of non-genic genome elements, including transposable elements and small RNAs]({{ site.url }}{{ site.baseurl }}/assets/images/chromatin.png){: .align-left}{:width="400"}
-Plants can retain molecular traces of pathogen attack, sometimes across generations. But can a plant parasite remember its host? Parasitic plants offer an unusually powerful system for answering this question because they form long-lasting physiological connections with their hosts through haustoria, enabling sustained communication and bidirectional molecular exchange between two plant species. Unlike many acute microbial infections, these prolonged associations allow us to follow the how interaction-induced chromatin states emerge, persist and change over much of the partners’ lifetimes.
+![Diagram of chromatin modifications in genomic DNA]({{ site.url }}{{ site.baseurl }}/assets/images/chromatin.png){: .align-left}{:width="400"}
+Plants can retain molecular traces of pathogen attack, sometimes across generations. But can a plant parasite remember its host? Parasitic plants offer an unusually powerful system for answering this question because they form long-lasting physiological connections with their hosts through haustoria, enabling sustained communication and bidirectional molecular exchange between two plant species. Unlike many acute microbial infections, these prolonged associations allow us to follow how interaction-induced chromatin states emerge, persist and change over much of the partners’ lifetimes.
 
 We investigate the earliest signals that connect host–parasite recognition to chromatin reprogramming. We are particularly interested in which chromatin states are established by small RNAs through RNA-directed DNA methylation, which arise through small RNA-independent pathways, how long they persist and whether they alter the outcome of a subsequent encounter.
 
