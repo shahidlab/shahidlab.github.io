@@ -17,12 +17,12 @@ We are always interested in researchers who are curious and excited by interdisc
 
 <nav class="join-nav" markdown="0">
   <a href="#phd" class="btn btn--brand-blue">PhD</a>
-  <a href="#postdoc" class="btn btn--brand-green">Postdoctoral Fellowships</a>
-  <a href="#undergrad" class="btn btn--brand-yellow">Undergraduate Research</a>
-  <a href="#visiting" class="btn btn--brand-teal">Visiting Researchers / Collaborations</a>
+  <a href="#postdoc" class="btn btn--brand-green">Postdoctoral fellowships</a>
+  <a href="#undergrad" class="btn btn--brand-yellow">Undergraduate research</a>
+  <a href="#visiting" class="btn btn--brand-teal">Visiting researchers / collaborations</a>
 </nav>
 
-## PhD Opportunities
+## PhD opportunities
 {: #phd}
 
 We welcome enquiries from prospective students interested in developing a project with us, as well as applications to advertised funded studentships. You do not need previous experience in every technique used in the lab. We welcome applicants from experimental, computational and quantitative backgrounds who are interested in learning across disciplines. If you are excited by our research but unsure whether your current experience is an exact match, we still encourage you to get in touch.
@@ -30,7 +30,7 @@ We welcome enquiries from prospective students interested in developing a projec
 <a href="https://sheffield.ac.uk/postgraduate/phd" target="_blank" rel="noopener noreferrer" class="btn btn--external">Current PhD Opportunities <i class="fas fa-external-link-alt" aria-hidden="true"></i><span class="visually-hidden"> (opens in new tab)</span></a>
 <a href="https://sheffield.ac.uk/postgraduate/phd/scholarships" target="_blank" rel="noopener noreferrer" class="btn btn--external">PhD funding at Sheffield <i class="fas fa-external-link-alt" aria-hidden="true"></i><span class="visually-hidden"> (opens in new tab)</span></a>
 
-## Postdoctoral Fellowship Opportunities
+## Postdoctoral fellowship opportunities
 {: #postdoc}
 
 Postdoctoral researchers interested in joining the Shahid Lab are encouraged to contact [Dr. Shahid](mailto:saima.shahid@sheffield.ac.uk) to discuss independent fellowship funding opportunities. If there is a strong scientific fit, we can work with prospective fellows to develop the research question, identify appropriate schemes and connect the project with relevant expertise across Sheffield.
@@ -47,20 +47,20 @@ Postdoctoral researchers interested in joining the Shahid Lab are encouraged to 
 [**EMBO Postdoctoral Fellowship**](https://www.embo.org/funding/fellowships-grants-and-career-support/postdoctoral-fellowships/) &mdash; for internationally mobile early-career researchers in the life sciences. Also see the [**MSCA Postdoctoral Fellowship**](https://marie-sklodowska-curie-actions.ec.europa.eu/actions/postdoctoral-fellowships).
 </div>
 <div class="fellowship-card" markdown="1">
-#### Early Career
+#### Early career
 [**Leverhulme Early Career Fellowship**](https://www.leverhulme.ac.uk/early-career-fellowships) &mdash; for researchers building an academic career in the UK through a significant independent research project.
 </div>
 <div class="fellowship-card" markdown="1">
-#### Early Independence
+#### Early independence
 [**BBSRC Early Independence Fellowship**](https://www.ukri.org/opportunity/early-independence-bbsrc-fellowships-outline/) &mdash; for researchers establishing an independent research niche.
 </div>
 </div>
 
 ### Other opportunities
 
-The [**University of Sheffield Faculty of Science fellowship pages**](https://www.sheffield.ac.uk/science/research/fellowships) provide information about major external fellowship schemes, upcoming calls and any Sheffield internal selection processes. You can also explore this [**community postdoctoral funding database**](https://docs.google.com/spreadsheets/d/1J2M_tQgoqV4ivpfEClh9qs9f2KQN2O1G3Jpda2aoHfQ/edit#gid=0) for additional national and international fellowship opportunities.
+The [University of Sheffield Faculty of Science fellowship pages](https://www.sheffield.ac.uk/science/research/fellowships) provide information about major external fellowship schemes, upcoming calls and any Sheffield internal selection processes. You can also explore this [community postdoctoral funding database](https://docs.google.com/spreadsheets/d/1J2M_tQgoqV4ivpfEClh9qs9f2KQN2O1G3Jpda2aoHfQ/edit#gid=0) for additional national and international fellowship opportunities.
 
-## Undergraduate Summer Research Opportunities
+## Undergraduate summer research opportunities
 {: #undergrad}
 
 <a href="https://sheffield.ac.uk/sure/home/what-sure" target="_blank" rel="noopener noreferrer" class="btn btn--external">Sheffield Undergraduate Research Experience (SURE) <i class="fas fa-external-link-alt" aria-hidden="true"></i><span class="visually-hidden"> (opens in new tab)</span></a>  
@@ -68,12 +68,12 @@ The [**University of Sheffield Faculty of Science fellowship pages**](https://ww
 <a href="https://www.bspp.org.uk/funds/vacation/" target="_blank" rel="noopener noreferrer" class="btn btn--external">BSPP-funded Summer Placements <i class="fas fa-external-link-alt" aria-hidden="true"></i><span class="visually-hidden"> (opens in new tab)</span></a>   
 <a href="https://blackinplantscience.org/2026/05/20/2026-bips-summer-students/" target="_blank" rel="noopener noreferrer" class="btn btn--external">Black in Plant Science Summer Studentship <i class="fas fa-external-link-alt" aria-hidden="true"></i><span class="visually-hidden"> (opens in new tab)</span></a>     
 
-## Visiting Researchers / Collaborations
+## Visiting researchers / collaborations
 {: #visiting}
 
 We welcome collaborations that bring complementary biological systems, approaches or perspectives to questions in mobile small RNA, epigenetic memory and plant–biotic interactions. Please [contact Dr. Shahid](mailto:saima.shahid@sheffield.ac.uk) directly to discuss a visit or potential collaboration.
 
-## Research Environment
+## Research environment
 
 The Shahid Lab is based in the School of Biosciences at the [University of Sheffield](https://www.sheffield.ac.uk/). We are part of the [Plants, Photosynthesis and Soil Cluster (PPS)](https://www.sheffield.ac.uk/biosciences/research/areas/plants-photosynthesis-and-soil) and the [Sheffield Institute for Nucleic Acids](https://sites.google.com/sheffield.ac.uk/sinfonia/home?pli=1), connecting our research with a broad community working across plant biology, ecology, molecular biology, genomics and nucleic-acid science.
 

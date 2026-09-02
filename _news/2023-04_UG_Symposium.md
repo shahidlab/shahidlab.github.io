@@ -1,6 +1,7 @@
 ---
 layout: single
-title: "April 2023: OSU UG Research Symposium"
+date: 2023-04-01
+title: "OSU UG Research Symposium"
 header:
   teaser: /assets/images/osu-ug-symposium-2023.jpg
 gallery:

@@ -1,5 +1,6 @@
 ---
 layout: single
+date: 2024-12-01
 title: "Saima featured in ITV 2024 Christmas Special on mistletoe"
 header:
   teaser: /assets/images/millhouse.jpg

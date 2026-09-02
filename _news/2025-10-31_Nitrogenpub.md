@@ -1,6 +1,8 @@
 ---
 layout: single
-title: "Published: Experimental warming alters free-living Nitrogen Fixation"
+date: 2025-10-31
+title: "Experimental warming alters free-living Nitrogen Fixation"
+tags: [Publication]
 header:
   teaser: /assets/pubs/2025_microbe.png
 show_date: false

@@ -1,6 +1,7 @@
 ---
 layout: single
-title: "February 2024: Shahid Lab moves to University of Sheffield"
+date: 2024-02-01
+title: "Shahid Lab moves to University of Sheffield"
 header:
   teaser: /assets/images/UoS.jpeg
 show_date: false

@@ -30,6 +30,9 @@ with a larger thumbnail (.featured-publication-card__image extends the base
                 <span class="__dimensions_badge_embed__" data-doi="{{ pub.link | split: "doi.org/" | last }}" data-style="small_circle" data-hide-zero-citations="true"></span>
               </p>
             </div>
+            {% if pub.snippet %}
+              <p class="publication-card__highlight">&mdash; <em>{{ pub.snippet }}</em></p>
+            {% endif %}
           </div>
         </div>
       </article>

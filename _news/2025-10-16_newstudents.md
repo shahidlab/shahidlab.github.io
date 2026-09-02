@@ -1,6 +1,7 @@
 ---
 layout: single
-title: "October 2025: Welcome Jen & Deiniol"
+date: 2025-10-16
+title: "Welcome Jen & Deiniol"
 #excerpt: "The Shahid Lab opens at Oklahoma State University!"
 header:
   teaser: /assets/images/JC.jpg

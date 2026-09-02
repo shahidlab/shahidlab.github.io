@@ -43,15 +43,15 @@ feature_row2:
     btn_class: "btn--external"
 ---
 # THE SHAHID LAB
-{: style="text-align: center;
+{: .home-title style="text-align: center;
   letter-spacing: 0.25em;"}
 
 {% include feature_row type="left" %}  
-## Research Program
+## Research program
 
 {% include feature_row id="feature_row2" %}
 
-## Latest News
+## Latest news
 
 {% comment %}
 GitHub Pages' safe mode blocks the jekyll-paginate/custom-plugin approaches

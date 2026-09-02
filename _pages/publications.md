@@ -7,11 +7,11 @@ header:
 permalink: /publications/
 author_profile: true
 ---
-## Selected Publications
+## Selected highlights
 
 {% include featured-publications.html %}
 
-## All Publications
+## All publications
 <a href="https://scholar.google.com/citations?user=lez4bcIAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="btn btn--external">Full list of publications in Google Scholar <i class="fas fa-external-link-alt" aria-hidden="true"></i><span class="visually-hidden"> (opens in new tab)</span></a>
 
 {% include publication-list.html %}

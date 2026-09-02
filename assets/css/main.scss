@@ -17,8 +17,82 @@ $primary-color: #3e3d4e !default;
 // that echoes the lab logo's blue/teal leaves instead of a neutral grey.
 $background-color: #eef3f5 !default;
 
+// Site-wide type: body copy + navigation (both driven by $sans-serif --
+// $global-font-family and $sans-serif-narrow each default to $sans-serif
+// too, so this one variable covers the masthead/nav as well) is Source Sans
+// 3; headings ($header-font-family, independently overridden here so it
+// doesn't just inherit the new $sans-serif value) are Libre Franklin -- a
+// humanist sans with proportions close enough to Source Sans 3 to read as
+// related rather than clashing, while still standing apart from body copy
+// at heading weights/sizes (tried DM Serif Display, then Source Serif 4,
+// before settling here).
+// Loaded via Google Fonts in _includes/head/custom.html. Fallback stack is
+// the theme's own $default-sans-serif written out literally, since that
+// variable isn't defined yet at this point in the file (it lives in the
+// theme's _variables.scss, imported below).
+$sans-serif: "Source Sans 3", -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif !default;
+$header-font-family: "Libre Franklin", -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif !default;
+// Image captions (figcaption, .page__hero-caption, .archive__item-caption)
+// default to $caption-font-family: $serif, independent of $sans-serif --
+// left unset, they'd stay on the theme's Georgia/Times fallback instead of
+// matching the rest of the site.
+$caption-font-family: $sans-serif !default;
+
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
+
+// Homepage body H1 ("# THE SHAHID LAB" in index.md, tagged with
+// {: .home-title}) -- font-family only, matching the masthead .site-title
+// below it. Size, weight, letter-spacing, uppercase etc. are left exactly
+// as they already are (this H1 otherwise gets the site's normal
+// $header-font-family/Source Serif 4, same as every other heading).
+.home-title {
+  font-family: "Source Sans 3", sans-serif;
+  font-weight: 750; // matches .site-title's weight
+}
+
+// The theme's own .archive__item-title rule (_archive.scss) hardcodes
+// font-family: $sans-serif-narrow, overriding the site-wide h1-h6 rule's
+// $header-font-family for every card-style h2 that uses this class --
+// Current Members/Alumni names, News titles, feature-row titles (like the
+// homepage hero's "How do plants communicate..."). That's what made those
+// read as sans-serif while plain markdown ## headings (e.g. "Research
+// Program") stayed on Source Serif 4. Match it to the general heading font
+// so every h2 (card title or plain) reads the same.
+.archive__item-title {
+  font-family: $header-font-family;
+}
+
+// Masthead site title ("The Shahid Lab" next to the logo in the nav bar)
+.site-title {
+  font-family: "Source Sans 3", sans-serif;
+  font-weight: 600; // semi-bold, not the same full weight as .home-title
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+  line-height: 1;
+}
+
+// .site-subtitle is a child <span> inside .site-title, so it would
+// otherwise inherit that bold/caps/letter-spaced styling too (font-weight,
+// text-transform, letter-spacing and line-height are all inherited
+// properties) -- reset it to plain nav-link styling (the theme's own nav
+// links carry no such overrides of their own, just normal weight/spacing).
+// font-size is one step up the theme's own type scale from its original
+// $type-size-8 default (~10px) to $type-size-7 (~11px) -- slightly bigger,
+// not a size picked from nowhere.
+.site-subtitle {
+  font-weight: 600; // semi-bold, not full bold
+  text-transform: none;
+  letter-spacing: normal;
+  // .site-title's own line-height: 1 (explicitly requested, kept) shrinks
+  // the vertical box the title text occupies, which pulls this subtitle
+  // line up closer beneath it than the original (untouched line-height)
+  // spacing had. Restored with an explicit margin instead of touching the
+  // title's line-height.
+  margin-top: 0.3em;
+  line-height: normal;
+  font-size: $type-size-7;
+}
 
 // link format
 
@@ -61,6 +135,7 @@ $background-color: #eef3f5 !default;
 // by page.title, so it's unaffected by this and stays literally typed in
 // caps as before.
 .page__hero--overlay .page__title {
+  font-family: "Source Sans 3", sans-serif; // matches .home-title -- otherwise inherits the site's Source Serif 4 heading default
   font-size: $h-size-1;
   letter-spacing: 0.25em;
   text-transform: uppercase;
@@ -285,6 +360,20 @@ $pub-card-radius: 14px;
   line-height: 1.4;
   font-size: 16px;
   color: $primary-color;
+}
+
+// One-sentence highlight under the journal/DOI row, driven by an entry's
+// `snippet:` field in _data/publications.yml (required on featured
+// entries, per that file's own header comment -- omit it and nothing
+// renders). Same literal 16px/line-height as .publication-card__citation
+// above, so it reads as part of the same text block, just styled as a
+// pulled quote. Not to be confused with .publication-card__highlighted
+// below, an unrelated, pre-existing "Highlighted in" links section.
+.publication-card__body .publication-card__highlight {
+  margin: 0.5em 0 0;
+  line-height: 1.4;
+  font-size: 16px;
+  color: $muted-text-color;
 }
 
 // Journal name + DOI button/badges share a row. No margin-top here -- the
@@ -751,6 +840,60 @@ $pub-action-size: 26px;
   }
 }
 
+// News item badge: tag(s) + month/year ("Publication · NOV 2025") above the
+// title, driven by post.tags and post.date (see people-single.html's news
+// branch) -- both optional per post, so this only renders when at least one
+// is set. font-size is a literal px smaller than the excerpt's own ~16.5px
+// (not $type-size-6 -- that resolved larger than the excerpt in this
+// context despite the matching 0.75em value, since the two sit in
+// different ancestor font-size chains) so the badge reads clearly smaller
+// than the excerpt text below it, not bigger.
+// margin-top restores the image-to-badge gap to roughly the theme's
+// original image-to-title spacing. Literal px, not em -- em here is
+// relative to this element's OWN font-size (11px), so an em value
+// collapsed down to almost nothing instead of the intended gap.
+// Selector qualified with .archive__item (not just the bare class) so its
+// specificity (0,2,0) beats the theme's ".page__content p { margin: 0 0
+// 1.3em; }" (0,1,1) -- a bare single-class rule loses to that regardless of
+// source order, which is why the margin-top was silently being zeroed out.
+.archive__item .news-item__meta {
+  display: inline-block;
+  margin: 20px 0 0.15em;
+  padding: 0.25em 0.6em;
+  background-color: #e5e5e5;
+  border-radius: 4px;
+  font-size: 16.5px; // matches .archive__item-excerpt's own resolved size in this same news-card context
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: $muted-text-color;
+}
+
+// Title/excerpt spacing matches the same tight gap used between Current
+// Members' jobtitle and excerpt (.person-card__jobtitle, 0.15em) in this
+// news-card context specifically (qualified with the news-item__* classes
+// added in people-single.html's news branch, so Current Members/Alumni
+// cards -- which reuse the same .archive__item-title/-excerpt base classes
+// -- are unaffected). Only margin-bottom is set on each element
+// (margin-top zeroed on what follows) -- .news-item__meta is
+// display:inline-block, so its margin does NOT collapse with the title's
+// the way two block-level siblings' margins would; mixing a collapsing gap
+// (title-to-excerpt) with a non-collapsing one (badge-to-title) is what
+// made the two gaps visually unequal despite similar-looking em values.
+// Single-sided margins on every pair sidestep that inconsistency entirely.
+.news-item__title {
+  margin-top: 0;
+  margin-bottom: 0.15em;
+  line-height: 1.25; // theme's inherited line-height read looser than the original tighter wrapped-title spacing
+}
+
+// Compound selector (not a descendant one) so it's specific enough to beat
+// the theme's ".page__content p { margin: 0 0 1.3em; }" reset, which
+// otherwise wins the cascade for this <p> regardless of source order.
+.archive__item-excerpt.news-item__excerpt {
+  margin-top: 0;
+  margin-bottom: 0.15em;
+}
+
 // Grid teaser photos (News, Current Members, Alumni -- all use this class via
 // people-single.html) have no size styling in the theme, so source images of
 // wildly different dimensions/aspect ratios render at their natural size.
@@ -780,6 +923,7 @@ $pub-action-size: 26px;
 // as <p> tags inside .page__content.
 .archive__item .person-card__jobtitle {
   margin-bottom: 0.15em;
+  font-size: $doc-font-size; // matches the site's base body text size (16px) -- previously unset, so it inherited a slightly larger ambient size from this grid context
 }
 
 // Email/social icons and the "Read bio" toggle share one row instead of
@@ -798,7 +942,11 @@ $pub-action-size: 26px;
 
   a {
     display: inline-block;
-    margin-inline-end: 0.5em;
+    // Matches the PI's own icon row (_pages/people.md), which is plain
+    // markdown/HTML with no explicit spacing of its own -- just the
+    // natural whitespace between adjacent inline <a> tags, tighter than
+    // the 0.5em this used to have.
+    margin-inline-end: 0.25em;
     font-size: $type-size-5;
   }
 }
@@ -840,25 +988,35 @@ $pub-action-size: 26px;
 
 // Principal Investigator photo: plain markdown image (not a grid card), so
 // it otherwise renders at full natural size. Match the same square-crop
-// treatment/scale as lab members' teaser photos -- 293px was a one-off
-// snapshot at a single viewport width; the teaser photos are actually a
-// constant ~23.73% of their container at every width (measured against
-// .archive__item-teaser-person img), so match that as a percentage instead
-// of a fixed px, or the two only coincidentally lined up at one size.
+// treatment/scale as lab members' teaser photos at every width -- the grid
+// (.grid__item, themed in _archive.scss) actually has THREE distinct tiers,
+// not one, and .pi-photo needs to mirror all three or the two drift apart
+// in between:
+//   - below $small (600px): grid is a single column, photo 100% of its card
+//   - $small to $medium (600-768px): grid is 2 columns (span(5 of 10)),
+//     each photo ~48.98% of the container
+//   - $medium (768px) and up: grid is 4 columns (span(3 of 12)), each photo
+//     ~23.73% of the container
+// (percentages measured live against .archive__item-teaser-person img,
+// since Susy's span()/gutter() math isn't a simple fraction to hand-compute).
+// An earlier version only had two tiers (100% / 23.73%), which matched at
+// true mobile and true desktop widths but left the PI photo far smaller
+// than the member photo in the 600-768px range in between.
 .pi-photo {
-  width: 23.73%;
+  width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: $border-radius;
 
-  // The theme's own .align-left only floats at $small (600px) and up --
-  // below that it's a stacked, full-width block, which is why the photo
-  // grows to fill a narrow window and the bio text drops beneath it. Float
-  // unconditionally here so the photo+text layout stays side by side at
-  // every width; max-width: 45% above already keeps the photo from
-  // crowding out the text on a truly narrow (phone-width) screen.
-  float: left;
-  margin-right: 1em;
+  @include breakpoint($small) {
+    width: 48.98%;
+    float: left;
+    margin-right: 1em;
+  }
+
+  @include breakpoint($medium) {
+    width: 23.73%;
+  }
 }
 
 // .entries-grid holds floated .grid__item cards (Current Members, Alumni,

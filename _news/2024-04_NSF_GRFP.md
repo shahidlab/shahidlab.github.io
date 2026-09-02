@@ -1,6 +1,7 @@
 ---
 layout: single
-title: "April 2024: Megan Adler awarded NSF GRFP"
+date: 2024-04-01
+title: "Megan Adler awarded NSF GRFP"
 header:
   teaser: /assets/images/MA.jpg
 show_date: false

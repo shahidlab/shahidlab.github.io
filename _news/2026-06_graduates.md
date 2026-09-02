@@ -1,6 +1,7 @@
 ---
 layout: single
-title: "June 2026: Congratulations to Jen, Deiniol and Megan on graduation!"
+date: 2026-06-01
+title: "Congratulations to Jen, Deiniol and Megan on graduation!"
 header:
   teaser: /assets/images/MAOSU26.jpg
 show_date: false

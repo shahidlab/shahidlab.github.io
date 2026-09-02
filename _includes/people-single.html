@@ -92,7 +92,12 @@ their own full article).
       </div>
       {% endif %}
     {% else %}
-      <h2 class="archive__item-title" itemprop="name">
+      {% if post.tags.size > 0 or post.date %}
+        <p class="news-item__meta">
+          {% if post.tags.size > 0 %}{{ post.tags | join: " · " }}{% endif %}{% if post.tags.size > 0 and post.date %} · {% endif %}{% if post.date %}{{ post.date | date: "%b %Y" }}{% endif %}
+        </p>
+      {% endif %}
+      <h2 class="archive__item-title news-item__title" itemprop="name">
         {% if post.link %}
           <a href="{{ post.link }}">{{ title }}</a> <a href="{{ post.url | relative_url }}" rel="permalink"><i class="fas fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
         {% else %}
@@ -102,16 +107,18 @@ their own full article).
       {% if post.read_time %}
         <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> {% include read-time.html %}</p>
       {% endif %}
-      <p class="archive__item-excerpt">
-      {% if post.jobtitle %}
-        <strong><span itemprop="jobTitle">{{ post.jobtitle | markdownify | strip_html }}</span></strong>
-      {% endif %}
-      {% if post.bio %}
-        // <span itemprop="description">{{ post.bio | markdownify | strip_html }}</span>
-      {% endif %}
-      </p>
-      {% if post.excerpt.size > 0 %}
+      {% if post.jobtitle or post.bio %}
         <p class="archive__item-excerpt">
+        {% if post.jobtitle %}
+          <strong><span itemprop="jobTitle">{{ post.jobtitle | markdownify | strip_html }}</span></strong>
+        {% endif %}
+        {% if post.bio %}
+          // <span itemprop="description">{{ post.bio | markdownify | strip_html }}</span>
+        {% endif %}
+        </p>
+      {% endif %}
+      {% if post.excerpt.size > 0 %}
+        <p class="archive__item-excerpt news-item__excerpt">
         &mdash; <span itemprop="description"><em>{{ post.excerpt | markdownify | strip_html | truncate: 56 }}</em></span>
         </p>
       {% endif %}

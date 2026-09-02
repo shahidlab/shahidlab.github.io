@@ -14,7 +14,7 @@ entries_layout: grid
 show_excerpts: true
 author_profile: false
 ---
-<h2  style="margin-top: 0">Principal Investigator</h2>
+<h2  style="margin-top: 0">Principal investigator</h2>
 
 <div class="clearfix-block" markdown="1">
 ![Dr Saima Shahid]({{ site.url }}{{ site.baseurl }}/assets/images/saima-shahid.jpg){: .align-left .pi-photo}  
@@ -38,7 +38,7 @@ Lab: C45, Alfred Denny Building
   <i class="fab fa-fw fa-twitter" style="color:#00acee"></i></a>  
 </div>
 
-## Current Members
+## Current members
 <section class="page__content cf">
 
 <div class="entries-{{ page.entries_layout }}">

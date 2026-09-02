@@ -6,8 +6,9 @@
 # featured (optional, true to include in the "Selected Publications" section);
 # featured_order (required if featured -- controls display order there, 1 first;
 # unrelated to the by-year list below, which always shows newest first);
-# snippet (required if featured -- one-line plain-English summary shown in the
-# highlighted callout box on the Selected Publications card).
+# snippet (required if featured -- one-line plain-English summary shown as a
+# dashed, italic line under the journal/DOI row on the Selected Publications
+# card).
 
 - image: /assets/pubs/2025_mir.jpg
   journal: "PLoS Computational Biology"
@@ -34,7 +35,7 @@
   link: https://doi.org/10.1146/annurev-genet-072920-015534
   featured: true
   featured_order: 4
-  snippet: "A comprehensive framework for how epigenetic mechanisms govern transposons and genome stability."
+  snippet: "Reviews how epigenetic and small RNA pathways regulate transposons and shape genome stability, plasticity and evolution."
 
 - image: /assets/pubs/2020_long_reads.png
   journal: "Current Opinion in Plant Biology"
@@ -61,7 +62,7 @@
   link: https://doi.org/10.1038/s41477-019-0458-0
   featured: true
   featured_order: 2
-  snippet: "Demonstrates exchange and cross-talk of mobile DNAs/RNAs driving adaptation in parasitic plants."
+  snippet: "Shows that horizontally acquired genes in Cuscuta are frequent sources of small RNAs, linking foreign DNA acquisition with the evolution of new regulatory functions."
 
 - image: /assets/pubs/2019_ALY1.png
   journal: "The Plant Cell"
@@ -72,7 +73,7 @@
   link: http://dx.doi.org/10.1105/tpc.18.00624
   featured: true
   featured_order: 3
-  snippet: "Identifies ALY1 as a key connector of RNA export and epigenetic silencing across the genome."
+  snippet: "Connects nuclear RNA export to genome-wide RdDM, revealing an unexpected layer of control over transposon silencing and DNA methylation."
 
 - image: /assets/pubs/2018_cuscuta.png
   journal: "Nature"
@@ -83,7 +84,7 @@
   link: http://dx.doi.org/10.1038/nature25027
   featured: true
   featured_order: 1
-  snippet: "Reveals that a parasitic plant exports microRNAs that reprogram host gene expression."
+  snippet: "First evidence that a parasitic plant deploys mobile small RNAs as virulence factors to silence host genes, establishing interspecies RNAi as a mechanism of plant–plant communication."
   highlighted_in:
     - source: "NCRI"
       text: "German Martinez, Kirsten Krause"
