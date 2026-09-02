@@ -18,18 +18,19 @@ with a larger thumbnail (.featured-publication-card__image extends the base
             </a>
           </div>
           <div class="publication-card__body">
+            <div class="featured-publication-card__top-row">
+              <span class="featured-publication-card__journal-badge">{{ pub.journal }}</span>
+              <span class="featured-publication-card__year">{{ pub.year }}</span>
+            </div>
             <h3 class="publication-card__title">
               <a href="{{ pub.link }}" target="_blank" rel="noopener noreferrer">{{ pub.title | markdownify | remove: "<p>" | remove: "</p>" | strip }}</a>
             </h3>
             <p class="publication-card__authors">{{ pub.authors | markdownify | remove: "<p>" | remove: "</p>" | strip }}{% if pub.note %} <span class="publication-card__note">{{ pub.note }}</span>{% endif %}</p>
-            <div class="publication-card__meta-row">
-              <p class="publication-card__citation"><em>{{ pub.journal }}</em> ({{ pub.year }})</p>
-              <p class="publication-card__actions">
-                <a href="{{ pub.link }}" target="_blank" rel="noopener noreferrer" class="publication-card__doi-btn">DOI</a>
-                <span class="altmetric-embed" data-badge-type="donut" data-hide-no-mentions="true" data-doi="{{ pub.link | split: "doi.org/" | last }}"></span>
-                <span class="__dimensions_badge_embed__" data-doi="{{ pub.link | split: "doi.org/" | last }}" data-style="small_circle" data-hide-zero-citations="true"></span>
-              </p>
-            </div>
+            <p class="publication-card__actions">
+              <a href="{{ pub.link }}" target="_blank" rel="noopener noreferrer" class="publication-card__doi-btn">DOI</a>
+              <span class="altmetric-embed" data-badge-type="donut" data-hide-no-mentions="true" data-doi="{{ pub.link | split: "doi.org/" | last }}"></span>
+              <span class="__dimensions_badge_embed__" data-doi="{{ pub.link | split: "doi.org/" | last }}" data-style="small_circle" data-hide-zero-citations="true"></span>
+            </p>
             {% if pub.snippet %}
               <p class="publication-card__highlight">&mdash; <em>{{ pub.snippet }}</em></p>
             {% endif %}

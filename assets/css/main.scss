@@ -17,21 +17,34 @@ $primary-color: #3e3d4e !default;
 // that echoes the lab logo's blue/teal leaves instead of a neutral grey.
 $background-color: #eef3f5 !default;
 
-// Site-wide type: body copy + navigation (both driven by $sans-serif --
-// $global-font-family and $sans-serif-narrow each default to $sans-serif
-// too, so this one variable covers the masthead/nav as well) is Source Sans
-// 3; headings ($header-font-family, independently overridden here so it
-// doesn't just inherit the new $sans-serif value) are Libre Franklin -- a
-// humanist sans with proportions close enough to Source Sans 3 to read as
-// related rather than clashing, while still standing apart from body copy
-// at heading weights/sizes (tried DM Serif Display, then Source Serif 4,
-// before settling here).
+// Only two typefaces sitewide: Inter for body copy, and Manrope for every
+// heading. Also see the equivalent Google Fonts <link> in
+// _includes/head/custom.html, which loads only these two families.
+//
+// Inter ($sans-serif -- $global-font-family and $sans-serif-narrow each
+// default to $sans-serif too, and .btn/.site-title/.site-subtitle have no
+// font-family override of their own beyond referencing Manrope directly, so
+// this one variable covers body copy + navigation + buttons + footer)
+// matches themewslab.com's own body-copy font (confirmed via computed
+// styles: Inter 300 on its <p> elements).
+//
+// Manrope ($header-font-family, independently overridden below so it
+// doesn't just inherit this value) covers every heading by default -- the
+// last Libre Franklin holdout (.archive__item-title: Current Members/Alumni
+// names, feature-row titles) moved here rather than getting its own
+// hardcoded override, so any other heading that falls back to this
+// variable also picks it up automatically. .home-title, .site-title,
+// .site-subtitle and .page__hero--overlay .page__title hardcode "Manrope"
+// literally instead (matching this variable's value, but written out since
+// they were already explicit before Libre Franklin was replaced -- kept
+// that way rather than switched to reference the variable).
+//
 // Loaded via Google Fonts in _includes/head/custom.html. Fallback stack is
 // the theme's own $default-sans-serif written out literally, since that
 // variable isn't defined yet at this point in the file (it lives in the
 // theme's _variables.scss, imported below).
-$sans-serif: "Source Sans 3", -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif !default;
-$header-font-family: "Libre Franklin", -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif !default;
+$sans-serif: "Inter", -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif !default;
+$header-font-family: "Manrope", -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif !default;
 // Image captions (figcaption, .page__hero-caption, .archive__item-caption)
 // default to $caption-font-family: $serif, independent of $sans-serif --
 // left unset, they'd stay on the theme's Georgia/Times fallback instead of
@@ -42,30 +55,38 @@ $caption-font-family: $sans-serif !default;
 @import "minimal-mistakes"; // main partials
 
 // Homepage body H1 ("# THE SHAHID LAB" in index.md, tagged with
-// {: .home-title}) -- font-family only, matching the masthead .site-title
-// below it. Size, weight, letter-spacing, uppercase etc. are left exactly
-// as they already are (this H1 otherwise gets the site's normal
-// $header-font-family/Source Serif 4, same as every other heading).
+// {: .home-title}) -- matches the masthead .site-title's font-family below,
+// and now the sitewide 30px/600 H1 size/weight (see the bare "h1" rule
+// further down) rather than its own separate 750 weight.
 .home-title {
-  font-family: "Source Sans 3", sans-serif;
-  font-weight: 750; // matches .site-title's weight
+  font-family: "Manrope", -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
+  font-weight: 600;
+  font-size: 30px;
 }
 
 // The theme's own .archive__item-title rule (_archive.scss) hardcodes
 // font-family: $sans-serif-narrow, overriding the site-wide h1-h6 rule's
 // $header-font-family for every card-style h2 that uses this class --
 // Current Members/Alumni names, News titles, feature-row titles (like the
-// homepage hero's "How do plants communicate..."). That's what made those
-// read as sans-serif while plain markdown ## headings (e.g. "Research
-// Program") stayed on Source Serif 4. Match it to the general heading font
-// so every h2 (card title or plain) reads the same.
+// homepage hero's "How do plants communicate..."). Without this override
+// those would read on a different font from plain markdown ## headings
+// (e.g. "Research program"). Match it to the general heading font so every
+// h2 (card title or plain) reads the same.
+// font-weight is set explicitly here too (not just font-family): CSS
+// resolves each property independently by specificity, so without this the
+// bare "h2 { font-weight: ... }" rule below (same 0,0,1 specificity as the
+// theme's own "h1,h2,...{ font-weight: bold }" but declared later) would
+// still win the font-weight property on every card-style h2, leaving
+// feature-row/card titles looking thin even though .archive__item-title's
+// higher specificity correctly wins font-family.
 .archive__item-title {
   font-family: $header-font-family;
+  font-weight: bold;
 }
 
 // Masthead site title ("The Shahid Lab" next to the logo in the nav bar)
 .site-title {
-  font-family: "Source Sans 3", sans-serif;
+  font-family: "Manrope", -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
   font-weight: 600; // semi-bold, not the same full weight as .home-title
   text-transform: uppercase;
   letter-spacing: 0.13em;
@@ -73,14 +94,19 @@ $caption-font-family: $sans-serif !default;
 }
 
 // .site-subtitle is a child <span> inside .site-title, so it would
-// otherwise inherit that bold/caps/letter-spaced styling too (font-weight,
-// text-transform, letter-spacing and line-height are all inherited
-// properties) -- reset it to plain nav-link styling (the theme's own nav
-// links carry no such overrides of their own, just normal weight/spacing).
+// otherwise inherit that bold/caps/letter-spaced styling too (font-family,
+// font-weight, text-transform, letter-spacing and line-height are all
+// inherited properties) -- reset it to plain nav-link styling (the theme's
+// own nav links carry no such overrides of their own, just normal
+// weight/spacing). font-family is set explicitly to the same Manrope as
+// .site-title (technically redundant since it would inherit that anyway,
+// but kept explicit here rather than relying on inheritance, matching this
+// file's pattern elsewhere).
 // font-size is one step up the theme's own type scale from its original
 // $type-size-8 default (~10px) to $type-size-7 (~11px) -- slightly bigger,
 // not a size picked from nowhere.
 .site-subtitle {
+  font-family: "Manrope", -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
   font-weight: 600; // semi-bold, not full bold
   text-transform: none;
   letter-spacing: normal;
@@ -119,6 +145,39 @@ $caption-font-family: $sans-serif !default;
   clear: both;
 }
 
+// Plain markdown H1s (e.g. research.md's "How do plants communicate,
+// remember and evolve?") sitewide -- same 30px/600 as .home-title and
+// .page__hero--overlay .page__title above, so every H1 on the site (plain
+// markdown, homepage body, or hero banner) reads at one consistent
+// size/weight regardless of which of those three rules actually applies to
+// it.
+h1 {
+  font-weight: 600;
+  font-size: 30px;
+}
+
+// Plain H2 section headings (Research page's "Interspecies RNA
+// communication" etc., "Current Members", "Selected publications", "Latest
+// news", ...) get their own weight/size tuned separately from the site's
+// other headings, even though both are Manrope now ($header-font-family,
+// below) -- matching themewslab.com's own heading style (its h1-h3 are all
+// Manrope, confirmed by inspecting its computed styles).
+// A bare "h2" selector here is deliberately lower specificity than
+// .archive__item-title (a single class), so card titles that happen to
+// also be <h2> elements (Current Members/Alumni/News card titles,
+// feature-row titles) still win their own rule and keep their own
+// bold weight -- only genuinely plain markdown ## headings are affected.
+// font-size is bumped from the theme's default $h-size-2 (1.25em, ~20px) up
+// to 30px, matching themewslab.com's own equivalent heading ("Mechanisms of
+// Brain Plasticity", the exact h2 from the reference screenshot, 30px
+// there) -- at a light weight, stroke thickness scales with size, so
+// matching their size is what actually matches the visual weight.
+h2 {
+  font-family: "Manrope", -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
+  font-weight: 500; // bumped from 400 for better contrast against the body copy around it (600 was tried and read too heavy)
+  font-size: 30px;
+}
+
 // Match the header-overlay page titles (Research/News/People/Join, etc.) to
 // the homepage's own "THE SHAHID LAB" heading -- same font-size and
 // letter-spacing as that plain markdown <h1> (font-family/weight already
@@ -135,13 +194,14 @@ $caption-font-family: $sans-serif !default;
 // by page.title, so it's unaffected by this and stays literally typed in
 // caps as before.
 .page__hero--overlay .page__title {
-  font-family: "Source Sans 3", sans-serif; // matches .home-title -- otherwise inherits the site's Source Serif 4 heading default
-  font-size: $h-size-1;
+  font-family: "Manrope", -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif; // matches .home-title (redundant with $header-font-family below now that both are Manrope, but kept explicit/literal like .home-title rather than relying on the variable)
+  font-weight: 600; // matches the sitewide 30px/600 H1 size/weight (see the bare "h1" rule further down) rather than its own separate 700
+  font-size: 30px;
   letter-spacing: 0.25em;
   text-transform: uppercase;
 
   @include breakpoint($small) {
-    font-size: $h-size-1;
+    font-size: 30px;
   }
 }
 
@@ -267,15 +327,17 @@ $pub-card-radius: 14px;
 // card. Sits as its own fixed-width column to the left of the thumbnail
 // (the card itself is a flex row -- see .publication-card above) rather
 // than as a heading above the entry.
-.publication-card__year-badge {
-  flex: 0 0 60px; // widened from 45px -- 22px text needs more room than the old small bold label did
+// Qualified with the .publication-card ancestor (not just its own class) so
+// its specificity (0,2,0) reliably beats the theme's own
+// ".page__content p, .page__content li, .page__content dl { font-size: 1em }"
+// (0,1,1) -- the values happen to agree at the moment (both 16px) but
+// without this qualifier the size here would just be coincidentally
+// correct, not actually set by this rule (the same specificity trap
+// already fixed once for .news-item__meta).
+.publication-card .publication-card__year-badge {
+  flex: 0 0 45px;
   margin: 0;
-  font-size: 22px; // matches .publication-card__title (see the em-context note there)
-  // Matches .publication-card__title's line-height too -- both boxes start
-  // flush at the same top (siblings under the same align-items: flex-start
-  // row), so an identical line-height is what keeps their text vertically
-  // centered on each other; the browser's own default line-height here was
-  // taller than the title's 1.25, throwing the two a couple px out of line.
+  font-size: 16px;
   line-height: 1.25;
   font-weight: normal;
   color: $muted-text-color;
@@ -320,19 +382,24 @@ $pub-card-radius: 14px;
 }
 
 .publication-card__title {
-  margin: 0 0 0.15em;
+  // Literal px (not em) -- matches the citation-to-highlight gap below
+  // (.publication-card__highlight's margin-top), which is also literal px
+  // for the same reason: an em value here would be relative to the title's
+  // own font-size, not a fixed gap, so the two wouldn't reliably match if
+  // either element's font-size changes again later.
+  margin: 0 0 8px;
   line-height: 1.25;
-  // $type-size-5 (1em) computes to 22px inside .grid__item's nested font-size
-  // context but only 16px here -- use the literal pixel value to guarantee
-  // an exact match with lab member name links rather than relying on em math
-  // that depends on ancestor context.
-  font-size: 22px;
+  // Manrope, matching themewslab.com's own publication card title (their
+  // reference title is Manrope 500/20px) -- same family as the site's other
+  // headings now, but at its own weight/size (600/18px, bumped from their
+  // 500 for contrast) rather than following $header-font-family's rules,
+  // and off the card's own body copy (Inter).
+  font-family: "Manrope", -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
+  font-size: 18px;
 
-  // Semi-bold charcoal rather than full bold black or the site's usual
-  // orange hyperlink styling -- the larger font-size already signals
-  // "title", so full bold + near-black on top of that read as too heavy.
-  // .page__content a { text-decoration: none; } (above) still gives the
-  // underline-on-hover feedback that it's clickable.
+  // Bumped from the reference's 500 to 600 for slightly better contrast
+  // against the card's other text -- still well short of the site's other
+  // headings' bold.
   font-weight: 600;
 
   a {
@@ -351,8 +418,11 @@ $pub-card-radius: 14px;
 .publication-card__body .publication-card__authors {
   margin-bottom: 0.15em;
   line-height: 1.4;
-  font-size: 16px;
-  color: $muted-text-color;
+  font-size: 14px;
+  // A shade lighter than the card's other muted text ($muted-text-color,
+  // #393e46) so authors recede slightly behind the title without dropping
+  // to low-contrast grey.
+  color: color.scale($muted-text-color, $lightness: 25%);
 }
 
 .publication-card__body .publication-card__citation {
@@ -365,14 +435,16 @@ $pub-card-radius: 14px;
 // One-sentence highlight under the journal/DOI row, driven by an entry's
 // `snippet:` field in _data/publications.yml (required on featured
 // entries, per that file's own header comment -- omit it and nothing
-// renders). Same literal 16px/line-height as .publication-card__citation
-// above, so it reads as part of the same text block, just styled as a
-// pulled quote. Not to be confused with .publication-card__highlighted
-// below, an unrelated, pre-existing "Highlighted in" links section.
+// renders). Sized down from the citation row's 16px to 14px so it reads as
+// a quieter, secondary line rather than competing with the citation above
+// it. Not to be confused with .publication-card__highlighted below, an
+// unrelated, pre-existing "Highlighted in" links section.
+// margin-top is literal px (not em) to match .publication-card__title's
+// margin-bottom above -- see that rule's comment.
 .publication-card__body .publication-card__highlight {
-  margin: 0.5em 0 0;
+  margin: 8px 0 0;
   line-height: 1.4;
-  font-size: 16px;
+  font-size: 14px;
   color: $muted-text-color;
 }
 
@@ -573,6 +645,47 @@ $pub-action-size: 26px;
 .featured-publication-card__image {
   width: 190px;
   height: 190px;
+}
+
+// Journal + year, moved above the title (Selected Publications cards only --
+// the All Publications list keeps its own separate left-column year badge
+// and inline "journal (year)" citation line, untouched). Matches
+// themewslab.com's own featured-card layout: a small grey journal pill at
+// top-left, plain year at top-right, title below.
+.featured-publication-card__top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px; // same 8px rhythm as the title-to-authors and citation-to-highlight gaps
+}
+
+.featured-publication-card__journal-badge {
+  display: inline-block;
+  padding: 0.25em 0.6em;
+  background-color: #e5e5e5; // same grey-pill treatment as .news-item__meta
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: $muted-text-color;
+}
+
+.featured-publication-card__year {
+  font-size: 14px;
+  color: color.scale($muted-text-color, $lightness: 25%); // same lighter shade as .publication-card__authors
+}
+
+// .publication-card__actions (DOI button + altmetric/dimensions badges) is
+// no longer wrapped in .publication-card__meta-row on featured cards -- the
+// citation that used to share that row moved into .featured-publication-card__top-row
+// above the title, leaving actions as the only thing between authors and the
+// snippet. The child combinator (not a bare descendant selector) is
+// deliberate: it targets only this direct-child case, not the same class
+// nested inside .publication-card__meta-row on the All Publications list
+// (publication-entry.html), which still needs its own margin: 0 there.
+.publication-card__body > .publication-card__actions {
+  margin: 8px 0;
 }
 
 // Join page: postdoctoral fellowship routes shown as a card grid (see
@@ -800,6 +913,19 @@ $pub-action-size: 26px;
   font-size: $type-size-6;
 }
 
+// Homepage hero row title only ("How do plants communicate with other
+// organisms?") -- .feature__item--left is this row's own wrapper class,
+// distinct from the plain .feature__item used by "Our Research Themes"
+// above, so this doesn't touch that card's own 1.1rem/bold styling.
+// Without an override here this title fell through to the bare "h2" rule
+// for its size (30px, coincidentally the same as the plain-H2 section
+// headings) while still taking its bold weight from .archive__item-title
+// itself -- both replaced with explicit values instead.
+.feature__item--left .archive__item-title {
+  font-weight: 600;
+  font-size: 30px;
+}
+
 .feature__item .archive__item-teaser {
   overflow: hidden;
   background-color: #fff;
@@ -862,7 +988,7 @@ $pub-action-size: 26px;
   padding: 0.25em 0.6em;
   background-color: #e5e5e5;
   border-radius: 4px;
-  font-size: 16.5px; // matches .archive__item-excerpt's own resolved size in this same news-card context
+  font-size: 12px; // matches .featured-publication-card__journal-badge's size
   font-weight: 600;
   letter-spacing: 0.05em;
   color: $muted-text-color;
@@ -884,6 +1010,27 @@ $pub-action-size: 26px;
   margin-top: 0;
   margin-bottom: 0.15em;
   line-height: 1.25; // theme's inherited line-height read looser than the original tighter wrapped-title spacing
+  // Matches .publication-card__title's style (Manrope 600/18px) rather than
+  // the bold weight every other archive__item-title card gets.
+  font-family: "Manrope", -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
+  font-weight: 600;
+
+  a {
+    // Overrides the theme's default link blue ($link-color) with the same
+    // dark slate used for publication titles, so the two read as the same
+    // style of heading.
+    color: $primary-color;
+  }
+}
+
+// font-size needs its own, separately-qualified rule: the theme's own
+// ".grid__item .archive__item-title { font-size: 1em; }" (0,2,0, resolving
+// to 22px in .grid__item's fluid ambient context) outranks a bare
+// ".news-item__title" (0,1,0) regardless of source order. Matching its
+// specificity here -- same ancestor, same rule count -- lets this win on
+// source order instead, since it's declared later in the file.
+.grid__item .news-item__title {
+  font-size: 18px;
 }
 
 // Compound selector (not a descendant one) so it's specific enough to beat
