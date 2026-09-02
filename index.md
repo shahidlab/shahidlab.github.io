@@ -22,7 +22,7 @@ feature_row:
 feature_row2:
   - image_path: /assets/images/Shahidlab-logo-swirl-color2-notext.gif
     alt: "Arabidopsis leaf"
-    title: "Interspecies RNAi"
+    title: "Interspecies RNA communication"
     excerpt: "We study the mechanisms underlying biogenesis, transfer and role of mobile small RNAs in interspecies communication, with the aim of developing synthetic RNA interference-based solutions for crop protection."
     url: /research/#interspecies
     btn_label: "Learn more"
@@ -36,7 +36,7 @@ feature_row2:
     btn_class: "btn--external"
   - image_path: /assets/images/cuscuta.png
     alt: "Cuscuta, a parasitic plant, flowering on its host"
-    title: "Genome plasticity in plant parasitism"
+    title: "Genome plasticity and evolution"
     excerpt: "The intimate association of parasitic plants with their hosts creates opportunities for horizontal gene transfer between host and parasite genomes. We study how such horizontally transferred DNA is recognised, epigenetically regulated, and sometimes repurposed into new regulatory functions."
     url: /research/#plasticity
     btn_label: "Learn more"
