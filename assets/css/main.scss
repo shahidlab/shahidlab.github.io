@@ -130,6 +130,23 @@ $caption-font-family: $sans-serif !default;
   text-decoration: underline;
 }
 
+// Main body copy sitewide -- up from the theme's own
+// ".page__content p, .page__content li, .page__content dl { font-size: 1em }"
+// (16px) to 18px, matching themewslab.com's own body copy exactly (their
+// regular paragraphs are Tailwind's flat "text-lg", 18px, fixed at every
+// viewport -- confirmed by inspecting their computed styles directly, not
+// a fluid/clamp-based value). li and dl are included here too, matching the
+// theme's own grouped selector -- an earlier version of this rule only
+// covered p, leaving list items (e.g. the Join page's facility links under
+// "Research environment") stranded at the old 16px while paragraphs grew to
+// 18px around them. Same specificity as the theme rule (0,1,1), so this
+// wins on source order alone since it's declared later in the file.
+.page__content p,
+.page__content li,
+.page__content dl {
+  font-size: 18px;
+}
+
 // Section headings (Research page's Interspecies RNAi/Epigenetic
 // memory/Genome plasticity, etc. -- all h2s) should always start on a fresh
 // line below any preceding .align-left/.align-right floated diagram.
@@ -607,7 +624,13 @@ $pub-action-size: 26px;
   }
 }
 
-.publication-card__highlighted-label {
+// Qualified with the .publication-card__highlighted ancestor (not just its
+// own class) so its specificity (0,2,0) beats the sitewide
+// ".page__content p { font-size: 18px }" (0,1,1) -- a bare single-class
+// rule loses to that regardless of source order, which was silently
+// blowing this label up to full 18px body-copy size instead of its
+// intended small-caps label size.
+.publication-card__highlighted .publication-card__highlighted-label {
   margin: 0 0 0.5em;
   font-size: $type-size-7;
   letter-spacing: 0.05em;
@@ -664,7 +687,7 @@ $pub-action-size: 26px;
   padding: 0.25em 0.6em;
   background-color: #e5e5e5; // same grey-pill treatment as .news-item__meta
   border-radius: 4px;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -672,7 +695,7 @@ $pub-action-size: 26px;
 }
 
 .featured-publication-card__year {
-  font-size: 14px;
+  font-size: 16px;
   color: color.scale($muted-text-color, $lightness: 25%); // same lighter shade as .publication-card__authors
 }
 
@@ -782,6 +805,40 @@ $pub-action-size: 26px;
   text-align: center;
 }
 
+// Keep the masthead nav bar pinned to the top of the viewport while
+// scrolling, matching themewslab.com's own nav behavior -- the theme
+// default is "position: relative" (it scrolls away with the page). "sticky"
+// (not "fixed") is deliberate: it stays in the document's normal flow, so
+// it doesn't need any compensating top padding on #main/the page hero the
+// way a fixed nav would -- it just stops moving once it reaches the top of
+// the viewport. z-index: 20 is already set by the theme itself and is high
+// enough to sit above the page hero overlay images (z-index: 5) beneath it.
+//
+// background-color is the real fix for the "transparent nav" bug: the
+// theme's own .masthead has NO background-color of its own anywhere (not
+// in _masthead.scss, not in the air skin) -- it always relied on the page
+// background showing through, which was invisible with the old "position:
+// relative" (nothing was ever stacked behind it). Once sticky, whatever
+// content has scrolled up underneath it (card text, hero image) is
+// genuinely positioned behind it in the same viewport region, and with no
+// opaque background of its own the masthead let that content show straight
+// through its own text -- not a rendering seam, just a missing background.
+//
+// top: -1px (not 0) plus will-change: transform additionally work around a
+// subpixel compositing gap some browsers still show at a sticky element's
+// very edge even once it has an opaque background. border-bottom is
+// swapped for an equivalent box-shadow for the same reason -- box-shadow
+// doesn't interact with the sticky box's own composited edge the way an
+// actual border does.
+.masthead {
+  position: sticky;
+  top: -1px;
+  will-change: transform;
+  background-color: $background-color;
+  border-bottom: none;
+  box-shadow: 0 1px 0 $border-color;
+}
+
 // The theme caps #main (every layout, including splash pages like the
 // homepage), the masthead nav bar's inner wrapper, AND the page-header hero
 // overlay's title wrapper -- three separate elements -- to $max-width
@@ -832,16 +889,14 @@ $pub-action-size: 26px;
   border-bottom: none;
 }
 
-// The theme sets feature-row excerpt text at $type-size-6 (0.75em), which
-// compounds with .feature__item's own 1.125em ancestor context to render
-// noticeably smaller than plain body copy elsewhere on the site (13.5px vs
-// 16px at the mobile breakpoint, 16.6px vs 22px at wide desktop widths --
-// the site's type scale is fluid, so a literal px match only works at one
-// viewport size). Cancel out the 1.125em multiplier instead (1 / 1.125 =
-// 0.8889em) so the resolved size is exactly 1x the root font-size at every
-// breakpoint, same as a plain <p> in .page__content.
+// Hero row excerpt ("We investigate how mobile small RNAs...") -- literal
+// 18px (not $type-size-6), matching .page__content p's body copy size.
+// $type-size-6 is a relative/em-based token whose actual px value drifts
+// with the ancestor font-size context and the theme's own fluid root
+// sizing, so it doesn't hold to one fixed value across viewports -- literal
+// px on both sides is what actually keeps them matching everywhere.
 .feature__wrapper .archive__item-excerpt {
-  font-size: 0.8889em;
+  font-size: 18px;
 }
 
 // Homepage "Our Research Themes" row (feature_row2, no include.type so the
@@ -906,11 +961,13 @@ $pub-action-size: 26px;
 }
 
 // Scoped to .feature__item specifically (not the shared .feature__wrapper
-// rule above, which also covers the hero row's .feature__item--left and is
-// deliberately kept at 1x root size) -- same $type-size-6 token used for
-// excerpt/bio text on the People page, to match that smaller look here.
+// rule above, which also covers the hero row's .feature__item--left).
+// Literal 18px, matching .page__content p's body copy size at every
+// viewport -- see .feature__wrapper .archive__item-excerpt above for why
+// this isn't $type-size-6 (a relative token that drifts from a fixed-px
+// value as viewport width changes).
 .feature__item .archive__item-excerpt {
-  font-size: $type-size-6;
+  font-size: 18px;
 }
 
 // Homepage hero row title only ("How do plants communicate with other
@@ -957,9 +1014,13 @@ $pub-action-size: 26px;
 // Alumni cards' jobtitle/school lines are plain .archive__item-excerpt <p>
 // tags, so they hit the same ".page__content p { margin: 0 0 1.3em; }"
 // specificity bug fixed above for Current Members -- qualify with
-// .alumni-gallery to win.
+// .alumni-gallery to win. font-size matches the sitewide 18px body-copy
+// size (.person-card__name/.alumni-gallery__name, the names themselves,
+// are deliberately left at their own larger 22px -- this is just the
+// jobtitle/school line underneath).
 .alumni-gallery .archive__item-excerpt {
   margin-bottom: 0.15em;
+  font-size: 18px;
 
   &:last-of-type {
     margin-bottom: 0;
@@ -988,7 +1049,7 @@ $pub-action-size: 26px;
   padding: 0.25em 0.6em;
   background-color: #e5e5e5;
   border-radius: 4px;
-  font-size: 12px; // matches .featured-publication-card__journal-badge's size
+  font-size: 14px; // matches .featured-publication-card__journal-badge's size
   font-weight: 600;
   letter-spacing: 0.05em;
   color: $muted-text-color;
@@ -1036,9 +1097,16 @@ $pub-action-size: 26px;
 // Compound selector (not a descendant one) so it's specific enough to beat
 // the theme's ".page__content p { margin: 0 0 1.3em; }" reset, which
 // otherwise wins the cascade for this <p> regardless of source order.
+// font-size is set here too, for the same reason: the theme's own
+// ".grid__item .archive__item-excerpt { font-size: 0.75em }" (news cards
+// sit inside .grid__item) has the same 0,2,0 specificity as this compound
+// selector, so without an explicit value here it would win on source order
+// instead -- and being a relative/em value in a fluid ancestor context, it
+// drifts away from a fixed body-copy size as viewport width changes.
 .archive__item-excerpt.news-item__excerpt {
   margin-top: 0;
   margin-bottom: 0.15em;
+  font-size: 16px;
 }
 
 // Grid teaser photos (News, Current Members, Alumni -- all use this class via
@@ -1070,7 +1138,7 @@ $pub-action-size: 26px;
 // as <p> tags inside .page__content.
 .archive__item .person-card__jobtitle {
   margin-bottom: 0.15em;
-  font-size: $doc-font-size; // matches the site's base body text size (16px) -- previously unset, so it inherited a slightly larger ambient size from this grid context
+  font-size: 18px; // matches the sitewide body-copy size
 }
 
 // Email/social icons and the "Read bio" toggle share one row instead of
@@ -1128,7 +1196,7 @@ $pub-action-size: 26px;
 
   p {
     margin: 0.5em 0 0;
-    font-size: $type-size-6;
+    font-size: 18px; // matches the sitewide body-copy size
     color: $muted-text-color;
   }
 }
