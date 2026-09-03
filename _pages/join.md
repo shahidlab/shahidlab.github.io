@@ -40,19 +40,19 @@ Postdoctoral researchers interested in joining the Shahid Lab are encouraged to 
 <div class="fellowship-cards" markdown="1">
 <div class="fellowship-card" markdown="1">
 #### International &rarr; UK
-[**Newton International Fellowship**](https://royalsociety.org/grants/newton-international/) &mdash; for early-career researchers currently based outside the UK.
+[**Newton international fellowship**](https://royalsociety.org/grants/newton-international/) &mdash; for early-career researchers currently based outside the UK.
 </div>
 <div class="fellowship-card" markdown="1">
-#### Life Sciences Mobility
-[**EMBO Postdoctoral Fellowship**](https://www.embo.org/funding/fellowships-grants-and-career-support/postdoctoral-fellowships/) &mdash; for internationally mobile early-career researchers in the life sciences. Also see the [**MSCA Postdoctoral Fellowship**](https://marie-sklodowska-curie-actions.ec.europa.eu/actions/postdoctoral-fellowships).
+#### Life sciences Mobility
+[**EMBO postdoctoral fellowship**](https://www.embo.org/funding/fellowships-grants-and-career-support/postdoctoral-fellowships/) &mdash; for internationally mobile early-career researchers in the life sciences. Also see the [**MSCA Postdoctoral fellowship**](https://marie-sklodowska-curie-actions.ec.europa.eu/actions/postdoctoral-fellowships).
 </div>
 <div class="fellowship-card" markdown="1">
 #### Early career
-[**Leverhulme Early Career Fellowship**](https://www.leverhulme.ac.uk/early-career-fellowships) &mdash; for researchers building an academic career in the UK through a significant independent research project.
+[**Leverhulme early career fellowship**](https://www.leverhulme.ac.uk/early-career-fellowships) &mdash; for researchers building an academic career in the UK through a significant independent research project.
 </div>
 <div class="fellowship-card" markdown="1">
 #### Early independence
-[**BBSRC Early Independence Fellowship**](https://www.ukri.org/opportunity/early-independence-bbsrc-fellowships-outline/) &mdash; for researchers establishing an independent research niche.
+[**BBSRC early independence fellowship**](https://www.ukri.org/opportunity/early-independence-bbsrc-fellowships-outline/) &mdash; for researchers establishing an independent research niche.
 </div>
 </div>
 
