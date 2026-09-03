@@ -43,7 +43,7 @@ Postdoctoral researchers interested in joining the Shahid Lab are encouraged to 
 [**Newton international fellowship**](https://royalsociety.org/grants/newton-international/) &mdash; for early-career researchers currently based outside the UK.
 </div>
 <div class="fellowship-card" markdown="1">
-#### Life sciences Mobility
+#### Life sciences mobility
 [**EMBO postdoctoral fellowship**](https://www.embo.org/funding/fellowships-grants-and-career-support/postdoctoral-fellowships/) &mdash; for internationally mobile early-career researchers in the life sciences. Also see the [**MSCA Postdoctoral fellowship**](https://marie-sklodowska-curie-actions.ec.europa.eu/actions/postdoctoral-fellowships).
 </div>
 <div class="fellowship-card" markdown="1">
@@ -75,7 +75,7 @@ We welcome collaborations that bring complementary biological systems, approache
 
 ## Research environment
 
-The Shahid Lab is based in the School of Biosciences at the [University of Sheffield](https://www.sheffield.ac.uk/). We are part of the [Plants, Photosynthesis and Soil Cluster (PPS)](https://www.sheffield.ac.uk/biosciences/research/areas/plants-photosynthesis-and-soil) and the [Sheffield Institute for Nucleic Acids](https://sites.google.com/sheffield.ac.uk/sinfonia/home?pli=1), connecting our research with a broad community working across plant biology, ecology, molecular biology, genomics and nucleic-acid science.
+The Shahid Lab is based in the School of Biosciences at the [University of Sheffield](https://www.sheffield.ac.uk/). We are part of the [Plants, Photosynthesis and Soil Cluster (PPS)](https://www.sheffield.ac.uk/biosciences/research/areas/plants-photosynthesis-and-soil) and the [Sheffield Institute for Nucleic Acids](https://sites.google.com/sheffield.ac.uk/sinfonia/home?pli=1), connecting our research with a broad community working across plant genomics, ecology, molecular and nucleic acid biology.
 
 [The School of Biosciences](https://www.sheffield.ac.uk/biosciences) is one of the largest single-site communities of bioscientists in the UK, including a substantial concentration of expertise in plant science. This creates a highly collaborative environment for interdisciplinary research, with opportunities to access complementary expertise, develop new collaborations and work across experimental and computational approaches. The strength of this research environment was recognised in REF2021, with [School of Biosciences
 ranking 4th in UK](https://sheffield.ac.uk/biosciences/news/biosciences-sheffield-rated-4th-uk-quality-research).
